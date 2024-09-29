@@ -1,8 +1,6 @@
 <?php 
     include 'components/connection.php';
-?>
 
-<?php 
     include 'components/header.php';
 ?>
     <div class="main">

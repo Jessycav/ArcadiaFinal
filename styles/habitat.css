@@ -40,3 +40,11 @@
     height: 2.5rem;
     cursor: pointer;
 }
+
+#habitats .box-container .box img{
+    width: 60%;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 5px;
+    object-position: center;
+}

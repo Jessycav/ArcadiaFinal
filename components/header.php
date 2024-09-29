@@ -16,9 +16,9 @@
     <link href="../styles/carousel.css" rel="stylesheet" type="text/css">
     <link href="../styles/responsive.css" rel="stylesheet" type="text/css">
     <link href="../styles/footer.css" rel="stylesheet" type="text/css">
-    <link href="../styles/home-animals.css" rel="stylesheet" type="text/css">
-    <link href="../styles/home-habitat.css" rel="stylesheet" type="text/css">
-    <link href="../styles/home-services.css" rel="stylesheet" type="text/css">
+    <link href="../styles/animals.css" rel="stylesheet" type="text/css">
+    <link href="../styles/habitat.css" rel="stylesheet" type="text/css">
+    <link href="../styles/services.css" rel="stylesheet" type="text/css">
     <link href="../styles/testimonial.css" rel="stylesheet" type="text/css">
     <link href="../styles/form.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
