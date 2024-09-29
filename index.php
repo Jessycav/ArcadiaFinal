@@ -7,15 +7,16 @@
 ?>
     <div class="main">
         <!-- Caroussel d'images pour page d'accueil -->
-        <div class="carousel">
-            <div class="carousel-images">
-                <img src="../images/animaux/elephant1.jpg" alt="Nos éléphants">
-                <img src="../images/animaux/tigre2.png" alt="Fu le tigre">
-                <img src="../images/animaux/flamrose2.png" alt="Nos flamants roses">
-            </div>
+        <div id="image-carousel" class="carousel">
+            <div class="carousel-inner">
+                <div class="slide" style="background-image: url('../images/animaux/elephant1.jpg');"></div>
+                <div class="slide" style="background-image: url('../images/animaux/tigre2.png');"></div>
+                <div class="slide" style="background-image: url('../images/animaux/flamrose2.png');"></div>
+            </div>    
             <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
             <button class="next" onclick="changeSlide(1)">&#10095;</button>
         </div>
+
         <div class="global-message">
             <h1>Bienvenue à Arcadia</h1>
             <h2>Venez vivre une parenthèse magique en forêt de Brocéliande</h2>
@@ -120,33 +121,16 @@
         <hr>
         <!-- Avis des visiteurs -->
         <h3>Les avis de nos visiteurs</h3>
-        <div class="testimonial-container">
-            <div class="container">
-                <?php
-                try {
-                    $sql = "SELECT * FROM testimonial WHERE approuve_message = 1";
-                    $stmt = $conn->prepare($sql);
-
-                    $stmt->execute();
-
-                    $testimonials = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-                    foreach($testimonials as $testimonial) {
-                        echo "<div class='testimonial-item'>";
-                        echo "<h5>" . htmlspecialchars($testimonial['visitor_firstname'], ENT_QUOTES) ."</h5>
-                        <p>" . htmlspecialchars($testimonial['visit_date'], ENT_QUOTES) . " </p>
-                        <p>" . htmlspecialchars($testimonial['message'], ENT_QUOTES) ." </p>
-                        </div>";
-                    }
-                } catch (PDOException $e) {
-                    echo "Erreur : " . $e->getMessage() . "</br>";
-                    die ();
-                }
-                ?>
-                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-                <button class="next" onclick="changeSlide(1)">&#10095;</button> 
-            </div>        
-            <button class="btn" name="send"><a href="testimonial_form.php">LAISSER VOTRE AVIS</a></button>
+        <div id="testimonial-carousel" class="carousel">
+            <div class="carousel-inner" id="testimonial-slider-container">
+                <!-- Slides ajoutées ici par Javascript -->
+            </div>
+            <button class="prev" onclick="changeTestimonialSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeTestimonialSlide(1)">&#10095;</button>
+            <br>
+            <div>        
+                <button class="btn" name="send"><a href="testimonial_form.php">LAISSER VOTRE AVIS</a></button>   
+            </div>
         </div>
         
         <!-- Footer -->

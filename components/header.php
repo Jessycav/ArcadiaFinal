@@ -24,7 +24,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Lien JavaScript -->
     <script src="../script/navbar_script.js" defer></script>
+    <script src="../script/testimonial_script.js" defer></script>
     <script src="../script/carousel_script.js" defer></script>
+    
 
 </head>
 
