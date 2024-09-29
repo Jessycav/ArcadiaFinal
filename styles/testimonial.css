@@ -1,0 +1,78 @@
+.testimonial {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.testimonial-container{
+    padding: 6% 0;
+    background-color: bisque;
+}
+
+.testimonial-container .container{
+    position: relative;
+    perspective: 1000;
+    padding: 1rem;
+}
+
+.testimonial-container .container .testimonial-item{
+    border-radius: 5px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+    color: gray;
+    width: 50vw;
+    margin: 0 auto;
+    text-align: center;
+    display: none;
+    padding: 1rem;
+    transition: 0.4s;
+}
+
+.testimonial-container .container .testimonial-item.active{
+    display: block;
+}
+
+.testimonial-container .container .testimonial-item h5{
+    color: #074d1f;
+    font-size: 1.3rem;
+    padding-bottom: 0.5rem;
+    text-transform: capitalize;
+}
+
+.testimonial-container .container .left-arrow,
+.testimonial-container .container .right-arrow{
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    font-size: 1.4rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.testimonial-container .container .left-arrow:hover,
+.testimonial-container .container .right-arrow:hover{
+    background-color: #074D1F;
+}
+
+.testimonial-container .container .left-arrow{
+    left: 8rem;
+}
+
+.testimonial-container .container .right-arrow{
+    right: 8rem;
+}
+
+.testimonial-container button{
+    display: block;
+    margin: 0 auto;
+}
+

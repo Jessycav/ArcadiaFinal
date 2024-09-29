@@ -1,0 +1,35 @@
+.services .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    background-color: #e8dec5;
+}
+
+.services .box-container .box{
+    margin: 1rem ;
+    position: relative;
+    text-align: center;
+}
+
+.services .box-container .box h3{
+    color: #074D1F;
+    padding: 1rem;
+}
+
+.services .box-container .box i{
+    align-items: center;
+    color: black;
+    font-size: 2.5rem;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.services .box-container .box i:hover{
+    align-items: center;
+    color: #074D1F;
+    border: 0.2rem solid #ebb42c;
+}
+
+.services button{
+    display: block;
+    margin: 0 auto;
+}

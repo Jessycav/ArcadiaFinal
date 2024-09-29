@@ -1,0 +1,39 @@
+/* Paramètres de la section des animaux célèbres*/
+.animal .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+.animal .box-container .box{
+    margin: 1rem;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    background-color: #fff; 
+    text-align: center;
+}
+
+.animal .box-container .box img{
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.animal .box-container .box h4{
+    text-transform: uppercase;
+    color: #074D1F;
+}
+
+.animal .box-container .box i{
+    align-items: center;
+    color: #ebb42c;
+    font-size: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+}
+
+.animal button{
+    display: block;
+    margin: 0 auto;
+}

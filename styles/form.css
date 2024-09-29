@@ -1,0 +1,57 @@
+.form-container{
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form-container form{
+    margin: auto;
+    padding: 1rem;   
+    background-color: #e8dec5;
+    display: block;
+    width: 75%;
+}
+
+.form-container form label{
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.form-container h3{
+    color: #074D1F;
+    font-family: "Sofadi One", system-ui;
+    text-align: center;
+    padding-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.form-container form .inputBox{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form-container form .inputBox input,
+.form-container form textarea{
+    font-family: sans-serif;
+    width: 100%;
+    background: #fff;
+    padding: 10px;
+    margin: 0.5rem;
+    border-radius: 10px;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+.form-container form p{
+    text-align: end;
+    margin: 0.5rem auto 2rem;
+}
+
+.form-container form button{
+    display: block;
+    margin: 0 auto;
+}
+

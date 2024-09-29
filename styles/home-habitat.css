@@ -1,0 +1,42 @@
+/* Paramètres de la section habitats*/
+.thumb{
+    max-width: 1200px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+    margin: 2rem auto;
+    padding: 2%;
+}
+
+.thumb .box-container{ 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.thumb .box-container .box{
+    text-align: center;
+    margin: 1rem;
+    line-height: 1.5;
+    padding-bottom: 1rem;
+    color: #074D1F;
+}
+
+.thumb .box-container .box img{
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.thumb .box-container .box h4{
+    font-family: "Sofadi One", system-ui;
+    text-transform: uppercase;
+    color: #074D1F;
+}
+
+.thumb .box-container .box i{
+    align-items: center;
+    color: #ebb42c;
+    font-size: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+}

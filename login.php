@@ -1,0 +1,65 @@
+<?php 
+    include 'components/connection.php';
+
+    session_start();
+
+    //Vérifier si l'utilisateur est déjà connecté
+    if (isset($_SESSION['user_name'])) {
+        header('Location: welcome.php');
+        exit();
+    }
+
+    // Initialiser les messages d'erreurs
+    $error = '';
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $user_name = trim($_POST['user_name'] ?? ''); //trim pour suprimer les espaces début et fin des entrées
+        $user_password = trim($_POST['user_password'] ?? '');
+
+        //Préparer une requête pour vérifier si les nom d'utilisateur est correct
+        $stmt = $pdo->prepare('SELECT * FROM user WHERE user_name = :user_name');
+        $stmt->execute(['user_name' => $user_name]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        //Préparer une requête pour vérifier si le mot de passe est correct
+        if ($user && $user_password === $user['user_password']) {
+            $_SESSION['user_name'] = $user['user_name'];
+            header('Location: welcome.php');
+            exit();
+        } else {
+            $error = 'Nom d\'utilisateur ou mot de passe incorrect';
+        }
+    }
+
+    include 'components/header.php';
+?>
+    <div class="main">
+        <div class="banner">
+            <h4>Se connecter</h4>
+        </div>
+        <!-- Espace de contact -->
+        <div class="form-container">
+            <h3>Connexion à l'espace professionnel</h3>
+            <?php if ($error): ?>
+                <p style="color: red;"><?= htmlspecialchars($error) ?></p>
+            <?php endif;?>
+            <form action="" method="POST">
+                <div class="inputBox">
+                    <label for="user_name">Nom d'utilisateur :</label>
+                    <input type="text" id="username" name="user_name" placeholder="Entrer votre nom d'utilisateur" required />
+                </div>
+                <div class="inputBox">
+                    <label for="user_password">Mot de passe :</label>
+                    <input type="password" id="password" name="user_password" placeholder="Entrer votre mot de passe" required />
+                </div>
+                <p>Mot de passe oublié ?</p>
+                <button class="btn" type="submit">SE CONNECTER</button>
+            </form>
+        </div> 
+   
+        <!-- Footer -->
+        <?php include 'components/footer.php';?>
+    </div>
+    
+</body>
+</html>
