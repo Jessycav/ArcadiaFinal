@@ -1,31 +1,52 @@
 // Changement automatique des slides
-let currentSlide  = 0; //variable de l'index de l'image visible
+let currentSlideIndex  = 0; //variable de l'index de l'image visible
+let currentTestimonialIndex = 0;
 
-let slides = document.querySelectorAll('.carousel-images img', '.testimonial-item'); //Récupère toutes les images de la div .carousel-images
-const totalSlides = slides.length; // Stocke le nombre total d'images dans le caroussel
-
-function showSlides(index) {
-    slides[index].classList.add('active'); //fonction pour rendre visible une image et cacher les autres
-    slides.forEach((slide, i) => {
-        if (i === index) {
-            slide.classList.add('active');
-        } else {
-            slide.classList.remove('active');
-        }
-    });
+function changeSlide(n) {
+    const slides = document.querySelectorAll('#image-carousel .slide');
+    showSlides(currentSlideIndex += n, slides); 
 }
 
-function changeSlide(direction) {
-    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-    showSlides(currentSlide);
+function showSlides(n, slides) {
+    if (n >= slides.length) currentSlideIndex = 0;
+    if (n < 0) currentSlideIndex = slides.length - 1;
 
-    if(currentSlide > slides.length){
-        currentSlide = 0;
-    }    
+    slides.forEach(slide => slide.style.display = 'none');
+    slides[currentSlideIndex].style.display = 'block';  
+};
+    
+function initializeImageCarousel (){
+    const slides = document.querySelectorAll('#image-carousel .slide');
+    slides[0].style.display ='block';
+
+    setInterval(() =>{
+        changeSlide(1);
+    }, 2000);
 }
 
-setInterval(() => {
-    changeSlide(1);
-}, 1500);
+function changeTestimonialSlide(n) {
+    const testimonialSlides = document.querySelectorAll('#testimonial-carousel .slide');
+    showTestimonialSlide(currentTestimonialIndex += n, testimonialSlides);
+}
 
-showSlides(currentSlide)
+function showTestimonialSlide(n, testimonialSlides) {
+    if (n >= testimonialSlides.length) currentTestimonialIndex = 0;
+    if (n < 0) currentTestimonialIndex = testimonialSlides.length - 1;
+
+    testimonialSlides.forEach(slide => slide.style.display = 'none');
+    testimonialSlides[currentTestimonialIndex].style.display = 'block';
+}
+
+function initializeTestimonialCarousel() {
+    const testimonialSlides = document.querySelectorAll('#testimonial-carousel .slide');
+    if (testimonialSlides.length > 0) {
+        testimonialSlides[0].style.display = 'block';
+        
+        setInterval(() =>{
+            changeTestimonialSlide(1);
+        }, 4000);
+    }
+}
+
+initializeImageCarousel();
+initializeTestimonialCarousel();
