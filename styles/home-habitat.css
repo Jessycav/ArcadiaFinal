@@ -20,7 +20,7 @@
 }
 
 .thumb .box-container .box img{
-    width: 15rem;
+    width: 100%;
     height: 15rem;
     object-fit: cover;
     border-radius: 5px;

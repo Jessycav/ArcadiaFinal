@@ -43,17 +43,17 @@
                 <div class="box">
                     <img src="images/photo-habitat/savane.jpg" alt="Savane">
                     <h4>La savane</h4>   
-                    <i class="fa fa-caret-square-o-right"></i>
+                    <a href="../habitat.php"><i class="fa fa-caret-square-o-right"></i></a>
                 </div>
                 <div class="box">
                     <img src="images/photo-habitat/jungle.jpg" alt="Jungle">
                     <h4>La jungle</h4>   
-                    <i class="fa fa-caret-square-o-right"></i>
+                    <a href="../habitat.php"><i class="fa fa-caret-square-o-right"></i></a>
                 </div>
                 <div class="box">
                     <img src="images/photo-habitat/marais.jpg" alt="Marais">
                     <h4>Le marais</h4>   
-                    <i class="fa fa-caret-square-o-right"></i>
+                    <a href="../habitat.php"><i class="fa fa-caret-square-o-right"></i></a>
                 </div>
             </div>
         </section>

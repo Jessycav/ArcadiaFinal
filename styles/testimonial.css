@@ -56,18 +56,6 @@ button.next{
     color: #E8DEC5;
 }
 
-
-
-
-
-#testimonial-carousel .slide{
-    background: #f4f4f4;
-    color: #333;
-    padding: 20px;
-    box-sizing: border-box;
-    display: none;
-}
-
 #testimonial-carousel button{
     display: block;
     margin: 0 auto;
