@@ -1,8 +1,6 @@
 <?php 
     include 'components/connection.php';
-?>
 
-<?php 
     include 'components/header.php';
 ?>
     <div class="main">
@@ -13,19 +11,21 @@
         <section id="habitats" class="thumb">
             <div class="box-container">
             <?php
-                $sql = "SELECT habitat.habitat_name, habitat_image.habitat_image_url FROM habitat JOIN habitat_image ON habitat.habitat_id = habitat_image.habitat_id";
-                $stmt = $conn->prepare($sql);
+                $query = "SELECT habitat.habitat_id, habitat.habitat_name, habitat_image.habitat_image_url 
+                        FROM habitat 
+                        JOIN habitat_image 
+                        ON habitat.habitat_id = habitat_image.habitat_id";
+                $stmt = $conn->prepare($query);
                 $stmt->execute();
-
                 $habitats = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 foreach ($habitats as $habitat) {
-                    echo "<div class='box-container'>"; 
                     echo "<div class='box'>";
                     echo "<h4>" . htmlspecialchars($habitat['habitat_name']) . "</h4>";
                     echo "<img src='" . htmlspecialchars($habitat['habitat_image_url'], ENT_QUOTES) . "' alt='" . htmlspecialchars($habitat['habitat_name'], ENT_QUOTES) . "'>";
+                    echo "<a href='habitat_detail.php?id=" . urlencode($habitat['habitat_id']) . "'>";
                     echo "<button class='btn'>Voir le détail</button>";
-                    echo "</div>";
+                    echo "</a>";
                     echo "</div>";
                 }     
             ?>

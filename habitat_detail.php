@@ -1,5 +1,6 @@
 <?php 
     include 'components/connection.php';
+
     include 'components/header.php';
 ?>
     <div class="main">
@@ -10,67 +11,55 @@
             <div class="box-container">
                 <?php
                     // Récupérer l'ID de l'habitat depuis l'URL
-                    $habitat_id = isset($_GET['habitat_id']) ? (int)$_GET['habitat_id'] : 0;
+                    $habitat_id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 
                     // Erreur si l'ID n'est pas valide
-                    if($habitat_id <= 0){
+                    if ($habitat_id <= 0) {
                         echo "Identifiant de l'habitat invalide";
                     }
 
-                    try {
-                        //Récupérer les détails de l'habitat et l'image de l'habitat
-                        $sql = "SELECT habitat.habitat_name, habitat.habitat_description, habitat_image.habitat_image_url AS habitat_image_url
-                            FROM habitat    
+                    //Récupérer les détails de l'habitat et l'image de l'habitat
+                    $query = "SELECT habitat.habitat_name, habitat_image.habitat_image_url, habitat.habitat_description
+                            FROM habitat
                             JOIN habitat_image ON habitat.habitat_id = habitat_image.habitat_id
-                            WHERE habitat_id = :habitat_id";
-                        $stmt_habitat = $conn->prepare($sql);                          
-                        $stmt_habitat->bindParam(':habitat_id', $habitat_id, PDO::PARAM_INT);
-                        $stmt_habitat->execute();
-                        $habitat = $stmt_habitat->fetch(PDO::FETCH_ASSOC);
+                            WHERE habitat.habitat_id = :habitat_id";
 
-                        //Si aucun habitat est trouvé
-                        if (!$habitat) {
-                            echo"Aucun habitat trouvé pour cet identifiant";
-                        }
+                    $stmt = $conn->prepare($query);                          
+                    $stmt->bindParam(':habitat_id', $habitat_id, PDO::PARAM_INT);
+                    $stmt->execute();
+                    $habitat = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                        //Récupérer les animaux associés à l'habitat et les images
-                        $stmt_animaux = $conn->prepare("
-                            SELECT animal.animal_name, animal_image.animal_image_url AS animal_image_url
-                            FROM animal 
-                            JOIN animal_image ON animal.animal_id = animal_image.animal_id
-                            WHERE animal.habitat_id = :habitat_id
-                        ");
-                        $stmt_animaux->bindParam(':habitat_id', $habitat_id, PDO::PARAM_INT);
-                        $stmt_animaux->execute();
-                        $animaux = $stmt_animaux->fetchAll(PDO::FETCH_ASSOC);
-                    } catch (PDOException $e) {
-                        echo "Erreur : " . $e->getMessage();
+                    //Si aucun habitat est trouvé
+                    if (!$habitat) {
+                        echo"Aucun habitat trouvé pour cet identifiant";
                     }
-                ?>
-            </div>
 
-            <div class="box-container">
+                    $query_animals = "SELECT animal.animal_id, animal.animal_name
+                    FROM animal
+                    WHERE animal.habitat_id = :habitat_id";
+                    //Récupérer les animaux associés à l'habitat et les images
+                    $stmt_animals = $conn->prepare($query_animals);           
+                    $stmt_animals->bindParam(':habitat_id', $habitat_id, PDO::PARAM_INT);
+                    $stmt_animals->execute();
+                    $animals = $stmt_animals->fetchAll(PDO::FETCH_ASSOC);  
+                ?>
+
                 <div class='box'>
                     <h5><?= htmlspecialchars($habitat['habitat_name']); ?></h5>
-                    <img src="<?= htmlspecialchars($habitat['habitat_image_url'], ENT_QUOTES); ?>" alt="Image de <?= htmlspecialchars($habitat['habitat_name'], ENT_QUOTES); ?>">
+                    <img src="<?= htmlspecialchars($habitat['habitat_image_url'], ENT_QUOTES); ?>" alt="Image de<?= htmlspecialchars($habitat['habitat_name'], ENT_QUOTES); ?>">
                     <p><?= htmlspecialchars($habitat['habitat_description']); ?></p>
                 </div>
                   
                 <p>Dans cet habitat, vous trouverez :</p>
-                <?php
-                    foreach ($animaux as $animal) {
-                        echo "<div class='box'>";
-                        echo "<img src='" . htmlspecialchars($animal['animal_image_url'], ENT_QUOTES) . "' alt='" . htmlspecialchars($animal['animal_name'], ENT_QUOTES) . "'>";
-                        echo "<h4>" . htmlspecialchars($animal['animal_name'], ENT_QUOTES) . "</h4>";
-                        echo "<a href='animal_detail.php?animal=" . urlencode($animal['animal_name']) . "'>";
-                        echo "<button class='btn'>Voir le détail</button>";
-                        echo "</a>";
-                        echo "</div>";
-                    }     
-                ?>
+                <ul>
+                    <?php foreach ($animals as $animal): ?>
+                        <li><a href="animal_detail.php?id=<?= htmlspecialchars($animal['animal_id']); ?>"><?= htmlspecialchars($animal['animal_name']); ?></a></li>
+                    <?php endforeach; ?>
+                </ul>
+
             </div>
 
-            <a href="habitat.php">Retour à la liste des habitats</a>
+            <a href="habitat.php"><button class="btn">Retour à la liste des habitats</button></a>
         </section>
         <!-- Footer -->
         <?php include 'components/footer.php';?>    

@@ -11,7 +11,7 @@
 }
 #testimonial-carousel .slide{
     width: 40vw;
-    height: auto;
+    height: 20vh;
     background-size: cover; /* remplir l'image dans l'espace disponible*/
     background-position: center;
     text-align: center;
@@ -23,18 +23,18 @@
 #testimonial-carousel .slide h5{
     color: #074d1f;
     font-size: 1.3rem;
-    padding-bottom: 0.5rem;
+    padding-top: 1rem;
     text-transform: capitalize;
 }
 
 #testimonial-carousel .slide p{
-    padding: 0.5rem;
+    padding: 1rem;
 }
 
 button.prev,
 button.next{
     position: absolute;
-    top: 30%;
+    top: 50%;
     transform: translateY(-50%);
     padding: 10px;
     font-size: 24px;

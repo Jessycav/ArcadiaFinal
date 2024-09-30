@@ -1,8 +1,6 @@
 <?php 
     include 'components/connection.php';
-?>
 
-<?php 
     include 'components/header.php';
 ?>
     <div class="main">
@@ -12,39 +10,43 @@
 
         <?php
         // Récupérer le nom de l'animal via l'URL
-        $nom_animal = isset($_GET['animal_name']) ? $_GET['animal_name'] : '';
+            $animal_id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 
-        //Préparer la requête pour récupérer les détails de l'animal
-        $sql = "SELECT animal.animal_name AS animal_name, 
-                        animal.health, 
-                        animal_image.animal_image_url, 
-                        breed.breed_name, 
-                        habitat.habitat_name
-                FROM animal JOIN animal_image JOIN breed JOIN habitat 
-                ON animal.animal_id = animal_image.animal_id = animal.breed_id = animal.habitat_id";
+            if ($animal_id <= 0) {
+                echo "Identifiant de l'animal invalide";
+            }
 
-        $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':animal_name', $nom_animal, PDO::PARAM_STR);
-        $stmt->execute();
-        $animal = $stmt->fetch(PDO::FETCH_ASSOC);
+            //Préparer la requête pour récupérer les détails de l'animal
+            $query = "SELECT animal.animal_name, animal.health, breed.breed_name, habitat.habitat_name, habitat.habitat_id, animal_image.animal_image_url, veterinary_report.food, veterinary_report.food_weight
+                    FROM animal
+                    JOIN habitat ON animal.habitat_id = habitat.habitat_id
+                    JOIN breed ON animal.breed_id = breed.breed_id
+                    LEFT JOIN animal_image ON animal.animal_id = animal_image.animal_id
+                    LEFT JOIN veterinary_report ON animal.animal_id = veterinary_report.animal_id
+                    WHERE animal.animal_id = :animal_id
+                    ";
 
-        if ($animal) {
-            echo "<h3>Détail de l'animal : " . htmlspecialchars($animal['animal_name'], ENT_QUOTES) . "<h3>";
-            echo "<img src='" . htmlspecialchars($animal['animal_image_url'], ENT_QUOTES) . "' alt='" . htmlspecialchars($animal['animal_name'], ENT_QUOTES) . "'>";
-            echo "<p>Habitat : " . htmlspecialchars($animal['habitat_name'], ENT_QUOTES) . "<p>";
-            echo "<p>Race : " . htmlspecialchars($animal['breed_name'], ENT_QUOTES) . "<p>";
-            echo "<p>Habitat : " . htmlspecialchars($animal['habitat_name'], ENT_QUOTES) . "<p>";
-            echo "<p>État de l\'animal : " . htmlspecialchars($animal['health'], ENT_QUOTES) . "<p>";
-        } else {
-            echo "<p>Aucun animal trouvé pour cet habitat<p>"; 
-        }
+            $stmt = $conn->prepare($query);
+            $stmt->bindParam(':animal_id', $animal_id, PDO::PARAM_INT);
+            $stmt->execute();
+            $animal = $stmt->fetch(PDO::FETCH_ASSOC);
         ?>
+
+        <div>
+            <h3>Détail de l'animal <? htmlspecialchars($animal['animal_name'], ENT_QUOTES); ?></h3>
+            <img src="<?= htmlspecialchars($animal['animal_image_url'], ENT_QUOTES); ?>" alt="Image de <? htmlspecialchars($animal['animal_name'], ENT_QUOTES); ?>">
+            <p>Habitat : <a href="habitat_detail.php?id=<?= htmlspecialchars($animal['habitat_id']); ?>"><?= htmlspecialchars($animal['habitat_name'], ENT_QUOTES); ?></a></p>
+            <p>Race : <?= htmlspecialchars($animal['breed_name'], ENT_QUOTES); ?></p>
+            <h4>Iformations du vétérinaire</h4>
+            <p>État de santé : <?= htmlspecialchars($animal['health'], ENT_QUOTES); ?></p>
+            <p>Nourriture : <?= htmlspecialchars($animal['food'], ENT_QUOTES); ?></p>
+            <p>Grammage : <?= htmlspecialchars($animal['food_weight'], ENT_QUOTES); ?></p>
+        </div>
     </div>
- 
-    
+
     <!-- Footer -->
     <?php include 'components/footer.php';?>
-</div>
+
 
 </body>
 </html>

@@ -65,32 +65,26 @@
                 <div class="box">
                     <img src="images/animaux/girafe1.jpg" alt="Notre girafe Olga">
                     <h4>Olga</h4>   
-                    <a href="animal.php"><i class="fa fa-plus"></i></a>
                 </div>
                 <div class="box">
                     <img src="images/animaux/orangoutan1.jpg" alt="Notre orang-outan Louis">
                     <h4>Louis</h4>   
-                    <a href="animal.php"><i class="fa fa-plus"></i></a>
                 </div>
                 <div class="box">
                     <img src="images/animaux/crocodile2.jpg" alt="Notre crocodile Dundee">
                     <h4>Dundee</h4>
-                    <a href="animal.php"><i class="fa fa-plus"></i></a>
                 </div>
                 <div class="box">
                     <img src="images/animaux/hippo1.jpg" alt="Notre hippopotame Gumba">
                     <h4>Gumba</h4>
-                    <a href="animal.php"><i class="fa fa-plus"></i></a>
                 </div>
                 <div class="box">
                     <img src="images/animaux/guepard1.jpg" alt="Notre guépard Speedy">
                     <h4>Speedy</h4>
-                    <a href="animal.php"><i class="fa fa-plus"></i></a>
                 </div>
                 <div class="box">
                     <img src="images/animaux/couleuvre.jpg" alt="La couleuvre Naga">
                     <h4>Naga</h4>
-                    <a href="animal.php"><i class="fa fa-plus"></i></a>
                 </div>
             </div>
             <br>
