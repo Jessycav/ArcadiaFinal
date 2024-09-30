@@ -33,20 +33,26 @@
         ?>
 
         <div>
-            <h3>Détail de l'animal <? htmlspecialchars($animal['animal_name'], ENT_QUOTES); ?></h3>
+            <h4>Détail de l'animal : <?= htmlspecialchars($animal['animal_name'], ENT_QUOTES); ?></h4>
             <img src="<?= htmlspecialchars($animal['animal_image_url'], ENT_QUOTES); ?>" alt="Image de <? htmlspecialchars($animal['animal_name'], ENT_QUOTES); ?>">
             <p>Habitat : <a href="habitat_detail.php?id=<?= htmlspecialchars($animal['habitat_id']); ?>"><?= htmlspecialchars($animal['habitat_name'], ENT_QUOTES); ?></a></p>
             <p>Race : <?= htmlspecialchars($animal['breed_name'], ENT_QUOTES); ?></p>
             <h4>Iformations du vétérinaire</h4>
             <p>État de santé : <?= htmlspecialchars($animal['health'], ENT_QUOTES); ?></p>
-            <p>Nourriture : <?= htmlspecialchars($animal['food'], ENT_QUOTES); ?></p>
-            <p>Grammage : <?= htmlspecialchars($animal['food_weight'], ENT_QUOTES); ?></p>
+            <?php
+                // Conditions pour vérifier la présence d'un rapport du vétérinaire
+                if (!empty($animal['food']) && !empty($animal['food_weight'])) {
+                    echo '<p>Nourriture : ' . htmlspecialchars($animal['food'], ENT_QUOTES) . '</p>';
+                    echo '<p>Grammage : ' . htmlspecialchars($animal['food_weight'], ENT_QUOTES) . '</p>';
+                } else {
+                    echo '<p>Aucun rapport vétérinaire n\'est disponible pour cet animal. </p>';
+                }
+            ?>
+
         </div>
+
+        <!-- Footer -->
+        <?php include 'components/footer.php';?>
     </div>
-
-    <!-- Footer -->
-    <?php include 'components/footer.php';?>
-
-
 </body>
 </html>
