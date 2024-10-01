@@ -7,7 +7,7 @@
         <div class="banner">
             <h4>Habitats et animaux</h4>
         </div>
-        <section id="habitats" class="thumb">
+        <section id="detail_page">
             <div class="box-container">
                 <?php
                     // Récupérer l'ID de l'habitat depuis l'URL
@@ -43,20 +43,23 @@
                     $stmt_animals->execute();
                     $animals = $stmt_animals->fetchAll(PDO::FETCH_ASSOC);  
                 ?>
-
-                <div class='box'>
-                    <h5><?= htmlspecialchars($habitat['habitat_name']); ?></h5>
-                    <img src="<?= htmlspecialchars($habitat['habitat_image_url'], ENT_QUOTES); ?>" alt="Image de<?= htmlspecialchars($habitat['habitat_name'], ENT_QUOTES); ?>">
-                    <p><?= htmlspecialchars($habitat['habitat_description']); ?></p>
+                <h5 class="title"><?= htmlspecialchars($habitat['habitat_name']); ?></h5>
+                <div class="box">
+                    <div class="image">
+                        <img src="<?= htmlspecialchars($habitat['habitat_image_url'], ENT_QUOTES); ?>" alt="Image de<?= htmlspecialchars($habitat['habitat_name'], ENT_QUOTES); ?>">
+                    </div>
+                    <br>
+                    <div class="description">
+                        <p><?= htmlspecialchars($habitat['habitat_description']); ?></p>
+                        <br>
+                        <p>Dans cet habitat, vous trouverez :</p>
+                        <ul>
+                            <?php foreach ($animals as $animal): ?>
+                                <li><a href="animal_detail.php?id=<?= htmlspecialchars($animal['animal_id']); ?>"><?= htmlspecialchars($animal['animal_name']); ?></a></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
                 </div>
-                  
-                <p>Dans cet habitat, vous trouverez :</p>
-                <ul>
-                    <?php foreach ($animals as $animal): ?>
-                        <li><a href="animal_detail.php?id=<?= htmlspecialchars($animal['animal_id']); ?>"><?= htmlspecialchars($animal['animal_name']); ?></a></li>
-                    <?php endforeach; ?>
-                </ul>
-
             </div>
 
             <a href="habitat.php"><button class="btn">Retour à la liste des habitats</button></a>

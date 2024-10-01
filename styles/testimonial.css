@@ -11,7 +11,7 @@
 }
 #testimonial-carousel .slide{
     width: 40vw;
-    height: 20vh;
+    height: 30vh;
     background-size: cover; /* remplir l'image dans l'espace disponible*/
     background-position: center;
     text-align: center;
