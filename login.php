@@ -52,7 +52,7 @@
                     <label for="user_password">Mot de passe :</label>
                     <input type="password" id="password" name="user_password" placeholder="Entrer votre mot de passe" required />
                 </div>
-                <p>Mot de passe oublié ?</p>
+                <p>En cas d'oubli des identifiants, veuillez contacter votre administrateur</p>
                 <button class="btn" type="submit">SE CONNECTER</button>
             </form>
         </div> 

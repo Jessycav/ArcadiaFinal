@@ -7,7 +7,7 @@
         <div class="banner">
             <h4>Habitats et animaux</h4>
         </div>
-        <h3>Découvrez ici les différents habitats de notre zoo Aracadia</h3>
+        <h3>Découvrez les différents habitats de notre zoo Aracadia</h3>
         <section id="habitats" class="thumb">
             <div class="box-container">
             <?php

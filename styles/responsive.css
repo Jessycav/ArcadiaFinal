@@ -86,7 +86,7 @@
     }
 
     .main .global-message h1{
-        font-family: "Sofadi One", system-ui;
+        font-family: "Aclonica", sans-serif;
         font-size: 1.5rem;
         text-align: center;
         font-weight: bolder;
@@ -103,7 +103,7 @@
         margin-top: 30px;
         margin-bottom: 30px;
         text-align: center;
-        font-family: "Sofadi One", system-ui;
+        font-family: "Aclonica", sans-serif;
         font-size: 1.2rem;
         font-weight: 500;
         letter-spacing: 4px;

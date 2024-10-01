@@ -31,7 +31,7 @@
             </p>
             <br>   
             <p>
-                Nous avons hâte de vous compter parmi nos visiteurs au zoo Arcadia et découvrez sans plus attendre des détails sur notre parc animalier.
+                Nous avons hâte de vous compter parmi nos visiteurs au zoo Arcadia et découvrez sans plus attendre les détails de notre parc animalier.
             </p>           
         </div>
         <br>
@@ -109,7 +109,7 @@
                 </div>
             </div>
             <br>
-            <button class="btn" name="send"><a href="services.php">VOIR LE DETAIL DES SERVICES</a></button>
+            <button class="btn" name="send"><a href="service.php">VOIR LE DETAIL DES SERVICES</a></button>
         </section>
         <br>
         <hr>

@@ -9,7 +9,7 @@
     <!-- Import Font family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sofadi+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
     <!-- Liens styles CSS -->
     <link href="../styles/global.css" rel="stylesheet" type="text/css">
     <link href="../styles/header.css" rel="stylesheet" type="text/css">
@@ -37,7 +37,7 @@
         <nav class="navbar">
             <a href="../index.php">Accueil</a>
             <a href="../habitat.php">Le zoo en détail</a>
-            <a href="../visit.php">Informations pratiques</a>
+            <a href="../service.php">Les services</a>
             <a href="../contact.php">Nous contacter</a>             
         </nav>
         <div class="icons">
