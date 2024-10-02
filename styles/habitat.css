@@ -20,14 +20,14 @@
 }
 
 .thumb .box-container .box img{
-    width: 15rem;
+    width: 100%;
     height: 15rem;
     object-fit: cover;
     border-radius: 5px;
 }
 
 .thumb .box-container .box h4{
-    font-family: "Sofadi One", system-ui;
+    font-family: "Aclonica", sans-serif;
     text-transform: uppercase;
     color: #074D1F;
 }
@@ -40,3 +40,12 @@
     height: 2.5rem;
     cursor: pointer;
 }
+
+#habitats .box-container .box img{
+    width: 60%;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 5px;
+    object-position: center;
+}
+

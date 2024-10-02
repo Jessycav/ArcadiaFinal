@@ -21,7 +21,7 @@
 
 .form-container h3{
     color: #074D1F;
-    font-family: "Sofadi One", system-ui;
+    font-family: "Aclonica", sans-serif;;
     text-align: center;
     padding-bottom: 1.5rem;
     font-size: 2rem;
@@ -46,7 +46,7 @@
 }
 
 .form-container form p{
-    text-align: end;
+    text-align: center;
     margin: 0.5rem auto 2rem;
 }
 
@@ -54,4 +54,3 @@
     display: block;
     margin: 0 auto;
 }
-

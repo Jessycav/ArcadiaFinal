@@ -1,5 +1,5 @@
 <?php 
-    require 'components/connection.php';
+    require '../components/connection.php';
 
     try {
         //Récupérer les avis non approuvés
@@ -13,8 +13,8 @@
                 echo"<p>Prénom " . htmlspecialchars($row["visitor_firstname"]) . "</p>";
                 echo"<p>Visite du : " . htmlspecialchars($row["visit_date"]) . "</p>";
                 echo"<p>Message " . htmlspecialchars($row["message"]) . "</p>";
-                echo "<a href='testimonial_valid.php?testimonial_id=". $row['testimonial_id']."'>Appouver</a> | ";
-                echo "<a href='testimonial_suppr.php?testimonial_id=". $row['testimonial_id']."'>Supprimer</a> | ";
+                echo "<a href='/admin/testimonial_valid.php?testimonial_id=". $row['testimonial_id']."'>Appouver</a> | ";
+                echo "<a href='/admin/testimonial_suppr.php?testimonial_id=". $row['testimonial_id']."'>Supprimer</a> | ";
                 echo "<div>";
             }
         } else {

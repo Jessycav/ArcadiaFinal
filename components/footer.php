@@ -21,10 +21,9 @@
             <div class="card">
                 <i class="fa fa-tags" style="font-size:32px;color:#ebb42c"></i>
                 <h4>Liens utiles</h4>
-                <a href="habitats.php" class="link">Les habitats</a>
+                <a href="habitat.php" class="link">Les habitats</a>
                 <a href="animals.php" class="link">Les animaux</a>
-                <a href="visit.php" class="link">Votre visite</a>
-                <a href="services.php" class="link">Nos services</a>
+                <a href="service.php" class="link">Nos services</a>
                 <a href="contact.php" class="link">Nous contacter</a>
             </div>
             

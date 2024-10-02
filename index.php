@@ -31,66 +31,62 @@
             </p>
             <br>   
             <p>
-                Nous avons hâte de vous compter parmi nos visiteurs au zoo Arcadia et découvrez sans plus attendre des détails sur notre parc animalier.
+                Nous avons hâte de vous compter parmi nos visiteurs au zoo Arcadia et découvrez sans plus attendre les détails de notre parc animalier.
             </p>           
         </div>
         <br>
         <hr>
+        <br>
         <!-- Sections du zoo -->
         <h3>Les habitats</h3>
         <section class="thumb">
             <div class="box-container">
                 <div class="box">
-                    <img src="images/photo-habitat/savane.jpg" alt="Savane">
+                    <img src="images/photo_habitat/savane.jpg" alt="Savane">
                     <h4>La savane</h4>   
-                    <i class="fa fa-caret-square-o-right"></i>
+                    <a href="../habitat.php"><i class="fa fa-caret-square-o-right"></i></a>
                 </div>
                 <div class="box">
-                    <img src="images/photo-habitat/jungle.jpg" alt="Jungle">
+                    <img src="images/photo_habitat/jungle.jpg" alt="Jungle">
                     <h4>La jungle</h4>   
-                    <i class="fa fa-caret-square-o-right"></i>
+                    <a href="../habitat.php"><i class="fa fa-caret-square-o-right"></i></a>
                 </div>
                 <div class="box">
-                    <img src="images/photo-habitat/marais.jpg" alt="Marais">
+                    <img src="images/photo_habitat/marais.jpg" alt="Marais">
                     <h4>Le marais</h4>   
-                    <i class="fa fa-caret-square-o-right"></i>
+                    <a href="../habitat.php"><i class="fa fa-caret-square-o-right"></i></a>
                 </div>
             </div>
         </section>
         <br>
         <hr>
+        <br>
         <h3>Nos animaux les plus célèbres</h3>
         <section class="animal">
             <div class="box-container">
                 <div class="box">
                     <img src="images/animaux/girafe1.jpg" alt="Notre girafe Olga">
                     <h4>Olga</h4>   
-                    <a href="animal.php"><i class="fa fa-plus"></i></a>
                 </div>
                 <div class="box">
                     <img src="images/animaux/orangoutan1.jpg" alt="Notre orang-outan Louis">
                     <h4>Louis</h4>   
-                    <a href="animal.php"><i class="fa fa-plus"></i></a>
                 </div>
                 <div class="box">
                     <img src="images/animaux/crocodile2.jpg" alt="Notre crocodile Dundee">
                     <h4>Dundee</h4>
-                    <a href="animal.php"><i class="fa fa-plus"></i></a>
                 </div>
                 <div class="box">
                     <img src="images/animaux/hippo1.jpg" alt="Notre hippopotame Gumba">
                     <h4>Gumba</h4>
-                    <a href="animal.php"><i class="fa fa-plus"></i></a>
                 </div>
                 <div class="box">
                     <img src="images/animaux/guepard1.jpg" alt="Notre guépard Speedy">
                     <h4>Speedy</h4>
-                    <a href="animal.php"><i class="fa fa-plus"></i></a>
                 </div>
                 <div class="box">
                     <img src="images/animaux/couleuvre.jpg" alt="La couleuvre Naga">
                     <h4>Naga</h4>
-                    <a href="animal.php"><i class="fa fa-plus"></i></a>
                 </div>
             </div>
             <br>
@@ -98,6 +94,7 @@
         </section>
         <br>
         <hr>
+        <br>
         <h3>Nos services</h3>
         <section class="services">
             <div class="box-container">
@@ -115,10 +112,11 @@
                 </div>
             </div>
             <br>
-            <button class="btn" name="send"><a href="services.php">VOIR LE DETAIL DES SERVICES</a></button>
+            <button class="btn" name="send"><a href="service.php">VOIR LE DETAIL DES SERVICES</a></button>
         </section>
         <br>
         <hr>
+        <br>
         <!-- Avis des visiteurs -->
         <h3>Les avis de nos visiteurs</h3>
         <div id="testimonial-carousel" class="carousel">
