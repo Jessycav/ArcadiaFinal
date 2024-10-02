@@ -27,3 +27,43 @@
     display: block;
     margin: 0 auto;
 }
+
+#service{
+    text-align: center;
+    padding: 0 10%;
+    margin: 0 5%;
+}
+
+#service .box-container{
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(200px, 1fr);
+}
+
+#service .box-container .box{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    gap: 20px;
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+#service .box-container .box img{
+    float: left;
+    width: 50%;
+    height: 300px;
+    padding: 0.5rem;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+#service .box-container .box h4{
+    text-align: left;
+    max-width: 400px;
+}
+

@@ -16,8 +16,8 @@
         $user_name = trim($_POST['user_name'] ?? ''); //trim pour suprimer les espaces début et fin des entrées
         $user_password = trim($_POST['user_password'] ?? '');
 
-        //Préparer une requête pour vérifier si les nom d'utilisateur est correct
-        $stmt = $pdo->prepare('SELECT * FROM user WHERE user_name = :user_name');
+        //Préparer une requête pour vérifier si les noms d'utilisateurs sont corrects
+        $stmt = $conn->prepare('SELECT * FROM user WHERE user_name = :user_name');
         $stmt->execute(['user_name' => $user_name]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -52,7 +52,7 @@
                     <label for="user_password">Mot de passe :</label>
                     <input type="password" id="password" name="user_password" placeholder="Entrer votre mot de passe" required />
                 </div>
-                <p>En cas d'oubli des identifiants, veuillez contacter votre administrateur</p>
+                <p>En cas d'oubli des identifiants, veuillez contacter votre administrateur.</p>
                 <button class="btn" type="submit">SE CONNECTER</button>
             </form>
         </div> 

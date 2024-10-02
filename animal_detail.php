@@ -38,6 +38,7 @@
                     <div class="image">
                         <img src="<?= htmlspecialchars($animal['animal_image_url'], ENT_QUOTES); ?>" alt="Image de <? htmlspecialchars($animal['animal_name'], ENT_QUOTES); ?>">
                     </div>
+                    <br>
                     <div class="description">
                         <p>Habitat : <a href="habitat_detail.php?id=<?= htmlspecialchars($animal['habitat_id']); ?>"><?= htmlspecialchars($animal['habitat_name'], ENT_QUOTES); ?></a></p>
                         <p>Race : <?= htmlspecialchars($animal['breed_name'], ENT_QUOTES); ?></p>

@@ -72,6 +72,17 @@
         display: block;
     }
 
+    footer{
+        background-color: #074D1F;
+        width: 100%;
+        min-height: 210vh;
+        margin-top: 2rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+
     footer .footer-content .inner-footer{
         max-width: none;
     }
@@ -175,5 +186,7 @@
         background-color: #E8DEC5;
         color: black;
     }
+
+    
 }
 

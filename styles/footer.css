@@ -2,7 +2,7 @@
 footer{
     background-color: #074D1F;
     width: 100%;
-    min-height: 60vh;
+    min-height: 75vh;
     margin-top: 2rem;
     background-repeat: no-repeat;
     background-size: cover;
@@ -44,14 +44,15 @@ footer .footer-content .inner-footer .card{
 }
 
 footer .footer-content .inner-footer .card p{
-    margin-bottom: 1rem;
-    font-size: 16px;   
+    font-size: 16px;  
+    margin-left: 0; 
 }
 
 footer .footer-content .inner-footer .card h4{
     font-size: 1.5rem;
     text-transform: uppercase;
-    padding-bottom: 0.5rem;
+    vertical-align: baseline;
+    margin: 0;
 }
 
 footer .footer-content .inner-footer .card i{
@@ -67,6 +68,7 @@ footer .footer-content .inner-footer .card .link{
     flex-direction: column;
     gap: 10px;
     padding: 0.5rem 0;
+    margin-left: 5%;
 }
 footer .footer-content .inner-footer .card .follow{
     margin-top: 1rem;

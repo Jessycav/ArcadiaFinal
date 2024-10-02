@@ -36,6 +36,7 @@
         </div>
         <br>
         <hr>
+        <br>
         <!-- Sections du zoo -->
         <h3>Les habitats</h3>
         <section class="thumb">
@@ -59,6 +60,7 @@
         </section>
         <br>
         <hr>
+        <br>
         <h3>Nos animaux les plus célèbres</h3>
         <section class="animal">
             <div class="box-container">
@@ -92,6 +94,7 @@
         </section>
         <br>
         <hr>
+        <br>
         <h3>Nos services</h3>
         <section class="services">
             <div class="box-container">
@@ -113,6 +116,7 @@
         </section>
         <br>
         <hr>
+        <br>
         <!-- Avis des visiteurs -->
         <h3>Les avis de nos visiteurs</h3>
         <div id="testimonial-carousel" class="carousel">

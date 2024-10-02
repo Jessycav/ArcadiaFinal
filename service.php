@@ -7,8 +7,8 @@
         <div class="banner">
             <h4>Nos services</h4>
         </div>
-
-        <h3>Le parc zoologique d'Arcadia dispose de plusieurs services pour faciliter votre visite</h3>
+        <h3>Informations pour préparer votre visite</h3>
+        <h5>Pour faciliter votre venue, le parc zoologique d'Arcadia dispose de plusieurs services inclus dans le prix votre billet d'entrée.</h5>
         <section id="service" class="service">
             <div class="box-container">
                 <?php
@@ -19,12 +19,12 @@
 
                     foreach ($services as $service) {
                         echo "<div class='box'>";
-                        echo "<h4>" . htmlspecialchars($service['service_name']) . "</h4>";
                         echo "<img src='" . htmlspecialchars($service['service_image_url'], ENT_QUOTES) . "' alt='" . htmlspecialchars($service['service_name'], ENT_QUOTES) . "'>";
+                        echo "<h4>" . htmlspecialchars($service['service_name']) . "</h4>";
                         echo "<p>" . htmlspecialchars($service['service_description']) . "</p>";
                         echo "</div>";
                     }     
-                ?>
+                ?>    
             </div>
         </section>
 

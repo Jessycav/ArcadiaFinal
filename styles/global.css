@@ -151,7 +151,6 @@ textarea{
     border-top: 1px solid #074D1F;
     padding: 1rem 2rem;
     text-transform: uppercase;
-    box-shadow: 
 }
 
 .title2 a{
@@ -192,10 +191,27 @@ textarea{
     color: #ebb42c;
     text-wrap: wrap;
     padding: 1rem;
+    text-align: center;
 }
 
 .main h4{
+    padding: 1rem;
     font-size: 1.2rem;
+}
+
+.main h5{
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+
+.main p{
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.main hr{
+    color: linear-gradient(90deg, #352703 0%, #074D1F 43.43%, #081c89 100%);
+  
 }
 
 

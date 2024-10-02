@@ -1,5 +1,5 @@
 <?php 
-    require 'components/connection.php';
+    require '../components/connection.php';
 
     if (isset($_GET['testimonial_id'])) {
         $testimonial_id = (int)$_GET['testimonial_id'];

@@ -7,13 +7,15 @@
         <div class="banner">
             <h4>Nos animaux</h4>
         </div>
+        <h3>Venez à la rencontre de nos animaux</h3>
+        <h5>Dans cette rubrique, vous pouvez découvrir la liste de tous les animaux merveilleux vivant à Arcadia.</h5>
 
         <?php
             // Filtrage par habitat
             $habitat_filter = isset($_GET['habitat_id']) ? $_GET['habitat_id'] : '';
 
             // Recupérer les données animaux avec jointure
-            $sql = "SELECT animal.animal_name, animal_image.animal_image_url FROM animal JOIN animal_image ON animal.animal_id = animal_image.animal_id";
+            $sql = "SELECT animal.animal_id, animal.animal_name, animal_image.animal_image_url FROM animal JOIN animal_image ON animal.animal_id = animal_image.animal_id";
 
             if ($habitat_filter) {
                 $sql .= " WHERE animal.habitat_id = :habitat_id";
@@ -57,7 +59,7 @@
                         echo "<div class='box'>";
                         echo "<img src='" . htmlspecialchars($animal['animal_image_url'], ENT_QUOTES) . "' alt='" . htmlspecialchars($animal['animal_name'], ENT_QUOTES) . "'>";
                         echo "<h4>" . htmlspecialchars($animal['animal_name'], ENT_QUOTES) . "</h4>";
-                        echo "<a href='animal_detail.php?id=" . urlencode($animal['animal_name']) . "'>";
+                        echo "<a href='animal_detail.php?id=" . urlencode($animal['animal_id']) . "'>";
                         echo "<button>Voir le détail</button>";
                         echo "</a>";
                         echo "</div>";

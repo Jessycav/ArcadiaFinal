@@ -41,3 +41,11 @@
     display: block;
     margin: 0 auto;
 }
+
+.filter form label{
+    margin: 1rem;
+}
+
+.filter form .btn{
+    margin-left: 1rem;
+}
