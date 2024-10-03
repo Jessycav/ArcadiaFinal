@@ -1,34 +1,43 @@
 <?php 
-    require '../components/connection.php';
+    include '../components/connection.php';
+    include '../components/admin_header.php';
 
     session_start();
+?>
 
-    //Vérifier si l'utilisateur est déjà connecté
-    if (isset($_SESSION['user_name'])) {
-        header('Location: ../welcome.php');
-        exit();
-    }
-
-    try {
-        //Récupérer les avis non approuvés
-        $stmt = $conn->query("SELECT * FROM testimonial WHERE approuve_message = 0");
-        $testionials = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        if ($testionials) {
-            echo "<h4>Gérer les avis</h4>";
-            foreach($testionials as $row) {
-                echo "<div class='form-container'>";
-                echo"<p>Prénom " . htmlspecialchars($row["visitor_firstname"]) . "</p>";
-                echo"<p>Visite du : " . htmlspecialchars($row["visit_date"]) . "</p>";
-                echo"<p>Message " . htmlspecialchars($row["message"]) . "</p>";
-                echo "<a href='/admin/testimonial_valid.php?testimonial_id=". $row['testimonial_id']."'>Appouver</a> | ";
-                echo "<a href='/admin/testimonial_suppr.php?testimonial_id=". $row['testimonial_id']."'>Supprimer</a> | ";
-                echo "</div>";
+    <div class="main">
+        <?php
+            //Vérifier si l'utilisateur est déjà connecté
+            if (isset($_SESSION['user_name'])) {
+                header('Location: dashboard.php');
+                exit();
             }
-        } else {
-            echo "Aucun avis en attente de validation";
-        }
-    } catch (PDOException $e) {
-        echo "Erreur lors de la récupération des avis : ";
-        die ();
-    }
+
+            try {
+                //Récupérer les avis non approuvés
+                $stmt = $conn->query("SELECT * FROM testimonial WHERE approuve_message = 0");
+                $testionials = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                if ($testionials) {
+                    echo "<h4>Gérer les avis</h4>";
+                    foreach($testionials as $row) {
+                        echo "<div class='form-container'>";
+                        echo"<p>Prénom " . htmlspecialchars($row["visitor_firstname"]) . "</p>";
+                        echo"<p>Visite du : " . htmlspecialchars($row["visit_date"]) . "</p>";
+                        echo"<p>Message " . htmlspecialchars($row["message"]) . "</p>";
+                        echo "<a href='/admin/testimonial_valid.php?testimonial_id=". $row['testimonial_id']."'>Appouver</a> | ";
+                        echo "<a href='/admin/testimonial_suppr.php?testimonial_id=". $row['testimonial_id']."'>Supprimer</a> | ";
+                        echo "</div>";
+                    }
+                } else {
+                    echo "Aucun avis en attente de validation";
+                }
+            } catch (PDOException $e) {
+                echo "Erreur lors de la récupération des avis : ";
+                die ();
+            }
+        ?>
+    </div>
+</body>
+</html>
+

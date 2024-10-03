@@ -1,6 +1,6 @@
 <?php
     include '../components/connection.php';
-    include '../components/header.php';
+    include '../components/admin_header.php';
 ?>
     <div class="main">
         <?php
@@ -27,7 +27,7 @@
 
         <p><a href="logout.php">Se déconnecter</a></p>
 
-        <?php include '../components/footer.php'?>
+
     </div>
 
 </body>
