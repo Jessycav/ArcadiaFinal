@@ -24,6 +24,7 @@ h4{
 
 .main{
     width: 85vw;
+    left: 7%;
     background-color: #fff;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
     margin: 1rem auto; /*taille du texte de 16px comme <html>*/

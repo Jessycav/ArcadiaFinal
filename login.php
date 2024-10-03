@@ -5,7 +5,7 @@
 
     //Vérifier si l'utilisateur est déjà connecté
     if (isset($_SESSION['user_name'])) {
-        header('Location: welcome.php');
+        header('Location: /admin/dashboard.php');
         exit();
     }
 
@@ -21,10 +21,11 @@
         $stmt->execute(['user_name' => $user_name]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        //Préparer une requête pour vérifier si le mot de passe est correct
-        if ($user && $user_password === $user['user_password']) {
+        //Préparer une requête pour vérifier si le mot de passe est correct (mot de passe haché)
+        if ($user && password_verify($user_password, $user['user_password'])) {
+            // Enregistrer le nom d'utilisateur dans la session
             $_SESSION['user_name'] = $user['user_name'];
-            header('Location: welcome.php');
+            header('Location: /admin/dashboard.php');
             exit();
         } else {
             $error = 'Nom d\'utilisateur ou mot de passe incorrect';
