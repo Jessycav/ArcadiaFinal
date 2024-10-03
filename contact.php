@@ -9,9 +9,9 @@
         <div class="banner">
             <h4>Nous contacter</h4>
         </div>
+        <h3>Formulaire de contact</h3>
         <!-- Espace de contact -->
         <div class="form-container">
-            <h3>Formulaire de contact</h3>
             <form action="" method="POST"> 
                 <div class="inputBox">
                     <input type="email" placeholder="Entrez votre email" required>
