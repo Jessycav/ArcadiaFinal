@@ -12,8 +12,8 @@
         <section id="service" class="service">
             <div class="box-container">
                 <?php
-                    $query = "SELECT service.service_id, service.service_name, service.service_image_url, service.service_description FROM service";
-                    $stmt = $conn->prepare($query);
+                    $sql = "SELECT service.service_id, service.service_name, service.service_image_url, service.service_description FROM service";
+                    $stmt = $conn->prepare($sql);
                     $stmt->execute();
                     $services = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

@@ -9,7 +9,7 @@
     <div class="main">
         <h3>Gestion des animaux du zoo</h3>
         <br>
-        <a href="add_animal.php"><button class="btn">Ajouter un animal</button></a>
+        <a href="animal_add.php"><button class="btn">Ajouter un animal</button></a>
         <br>
         <div class="box-container">
             <?php

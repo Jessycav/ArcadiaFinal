@@ -44,8 +44,8 @@
 }
 
 #service .box-container .box img{
-    width: 10rem;
-    height: 10rem;
+    width: 20rem;
+    height: 20rem;
     padding: 0.5rem;
     object-fit: cover;
     border-radius: 5px;
@@ -58,7 +58,7 @@
 }
 
 #service .box-container .box a button{
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin: 1rem;
     padding: 5px;
     border: 1px solid #074d1f;
@@ -68,5 +68,6 @@
 
 #service .box-container .box a button:hover{
     background-color: #d2eddc;
+    font-weight: bold;
 }
 

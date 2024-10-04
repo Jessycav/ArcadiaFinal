@@ -12,7 +12,7 @@
                     <input type="text" id="visitor_firstname" name="visitor_firstname" placeholder="Entrer votre prénom" required />
                 </div>
                 <div class="inputBox">
-                    <label for="vsit_date">Visite du :</label>
+                    <label for="visit_date">Visite du :</label>
                     <input type="date" id="visit_date" name="visit_date" placeholder="Entrer votre mot de passe" required />
                 </div>
                 <div class="inputBox">

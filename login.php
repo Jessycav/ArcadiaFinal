@@ -5,7 +5,7 @@
 
     //Vérifier si l'utilisateur est déjà connecté
     if (isset($_SESSION['user_name'])) {
-        header('Location: /admin/dashboard.php');
+        header('Location: /admin/dashboard_admin.php');
         exit();
     }
 
@@ -25,7 +25,7 @@
         if ($user && password_verify($user_password, $user['user_password'])) {
             // Enregistrer le nom d'utilisateur dans la session
             $_SESSION['user_name'] = $user['user_name'];
-            header('Location: /admin/dashboard.php');
+            header('Location: /admin/dashboard_admin.php');
             exit();
         } else {
             $error = 'Nom d\'utilisateur ou mot de passe incorrect';
