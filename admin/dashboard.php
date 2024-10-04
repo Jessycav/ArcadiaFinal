@@ -10,20 +10,34 @@
         <div class="container">
             <h3>Bienvenue sur votre espace, <?= htmlspecialchars($_SESSION['user_name']) ?> !</h3>
         </div>
-        <div class="container">
-            <a href="">Modifier les services</a>
-            <a href="">Mettre à jour les horaires</a>
-        </div>
-        <div class="container">
-            <a href="">Gestion des habitats</a> 
-            <a href="">Gestion des animaux</a>
-        </div>
-        <div class="container">
-            <a href="">Gestion des comptes employés</a>
-        </div>
+        <section class="dashboard">
+            <div class="box-container">
+                <div class="box">
+                    <a href="service_admin.php">Modifier les services</a>
+                </div>
+                <div class="box">
+                    <a href="schedule_admin.php">Mettre à jour les horaires</a>
+                </div>
+                <div class="box">
+                    <a href="habitat_admin.php">Gestion des habitats</a>
+                </div>
+                <div class="box">    
+                    <a href="animal_admin.php">Gestion des animaux</a>
+                </div>
+                <div class="box">
+                    <a href="animal_report_admin.php">Visualiser les comptes-rendus vétérinaires</a>
+                </div>
+                <div class="box">
+                    <a href="user_admin.php">Gestion des comptes employés</a>
+                </div>
+                <div class="box">
+                    <a href="testimonial_admin.php">Gestion des avis visiteurs</a>
+                </div>
+            </div>
+        </section>
+        
 
-
-        <button><a href="logout.php">Se déconnecter</a></button>
+        <button class="btn"><a href="logout.php">Se déconnecter</a></button>
     </div>
         
 </body>
