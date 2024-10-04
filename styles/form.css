@@ -1,17 +1,20 @@
 .form-container{
-    margin: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    max-width: 75%;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+    margin: 1rem auto;
+    padding: 2%;
 }
 
-.form-container form{
+.form-container form{  
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
     margin: auto;
     padding: 1rem;   
     background-color: #e8dec5;
     display: block;
-    width: 75%;
+
 }
 
 .form-container form label{
@@ -43,6 +46,11 @@
     border-radius: 10px;
     font-size: 20px;
     box-sizing: border-box;
+}
+
+.form-container form .inputBox select{
+    text-align: center;
+
 }
 
 .form-container form p{

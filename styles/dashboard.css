@@ -1,0 +1,26 @@
+.dashboard {
+    max-width: 60%;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+    margin: 1rem auto;
+    padding: 2%;
+}
+
+.dashboard .box-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard .box-container .box{
+    display: block;
+    text-align: center;
+    margin: 1rem;
+    line-height: 1.5;
+    padding-bottom: 1rem;
+    color: #074D1F;
+}
+
+.main .btn{
+    display: block;
+    margin: 0 auto;
+}
