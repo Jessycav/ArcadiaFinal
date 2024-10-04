@@ -1,7 +1,10 @@
 <?php 
     include '../components/connection.php';
-    include '../components/admin_header.php';
 
+    session_start();
+
+    include '../components/admin_header.php';
+    
     if (isset($_GET['testimonial_id'])) {
         $testimonial_id = (int)$_GET['testimonial_id'];
 
@@ -16,5 +19,3 @@
         die ();
         }
     }
-    
-    header("Location: testimonial_admin.php");

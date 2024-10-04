@@ -8,7 +8,7 @@
             <h4>Nos services</h4>
         </div>
         <h3>Informations pour préparer votre visite</h3>
-        <h5>Pour faciliter votre venue, le parc zoologique d'Arcadia dispose de plusieurs services inclus dans le prix votre billet d'entrée.</h5>
+        <h5>Pour faciliter votre venue, le parc zoologique d'Arcadia dispose de plusieurs services inclus dans le prix de votre billet d'entrée.</h5>
         <section id="service" class="service">
             <div class="box-container">
                 <?php

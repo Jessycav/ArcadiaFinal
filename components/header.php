@@ -22,11 +22,15 @@
     <link href="../styles/testimonial.css" rel="stylesheet" type="text/css">
     <link href="../styles/form.css" rel="stylesheet" type="text/css">
     <link href="../styles/detail.css" rel="stylesheet" type="text/css">
+    <link href="../styles/dashboard.css" rel="stylesheet" type="text/css">
+    <link href="../styles/horaires.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Lien JavaScript -->
     <script src="../script/navbar_script.js" defer></script>
+    <script src="../script/horaires_script.js" defer></script>
     <script src="../script/testimonial_script.js" defer></script>
     <script src="../script/carousel_script.js" defer></script>
+    
     
 
 </head>

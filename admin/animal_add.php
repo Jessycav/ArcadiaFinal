@@ -111,38 +111,13 @@
                             <label for="animal_image">Image :</label>
                             <input type="file" id="animal_image" name="image" accept="../images/animaux/*" required>
                         </div>
-                        <button class="btn" type="submit" name="register">Enregistrer</button>
                     </form>
+                    <br>
+                    <button class="btn" type="submit" name="register">Enregistrer</button>
                 </div>
             </div>
         </section>
-        
-
-
-       
-        
-
     </div>
         
 </body>
 </html>
-
-
-
-
-
-        <div class="inputBox">
-                        <label for="role">Profil :</label>
-                        <select id="role" name="role" required>
-                            <?php
-                            // Récupérer les roles
-                            $sql = "SELECT role_id, role_label FROM role WHERE role_label IN ('Vétérinaire', 'Employé')"; //IN pour filtrer les lignes
-                            $stmt = $conn->query($sql);
-                            $roles = $stmt->fetchAll();
-
-                            foreach ($roles as $role) {
-                                echo "<option value='" . $role['role_id'] . "'>" . $role['role_label'] . "</option>";
-                            }
-                            ?>
-                        </select>
-                    </div>

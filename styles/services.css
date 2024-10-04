@@ -28,42 +28,45 @@
     margin: 0 auto;
 }
 
-#service{
-    text-align: center;
-    padding: 0 10%;
-    margin: 0 5%;
-}
-
 #service .box-container{
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
-    margin-top: 2rem;
+    margin-top: 1rem;
     display: grid;
-    grid-template-columns: repeat(200px, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
 
 #service .box-container .box{
-    display: flex;
-    justify-content: baseline;
-    align-items: center;
-    gap: 20px;
-    padding: 1rem;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 0.5rem;
+    margin: 1rem;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    background-color: #fff; 
+    text-align: center;
 }
 
 #service .box-container .box img{
-    float: left;
-    width: 50%;
-    height: 300px;
+    width: 10rem;
+    height: 10rem;
     padding: 0.5rem;
-    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
     object-fit: cover;
     border-radius: 5px;
 }
 
 #service .box-container .box h4{
-    text-align: left;
+    text-align: center;
     max-width: 400px;
+    color: #074D1F;
+}
+
+#service .box-container .box a button{
+    font-size: 0.8rem;
+    margin: 1rem;
+    padding: 5px;
+    border: 1px solid #074d1f;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#service .box-container .box a button:hover{
+    background-color: #d2eddc;
 }
 

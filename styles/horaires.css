@@ -1,0 +1,22 @@
+.form-container form table {
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
+.form-container form th, 
+.form-container form td {
+    padding: 0.5rem;
+    text-align: center;
+}
+
+input[type="time"] {
+    padding: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#message {
+    text-align: center;
+    color: #074D1F;
+    margin-top: 20px;
+}
