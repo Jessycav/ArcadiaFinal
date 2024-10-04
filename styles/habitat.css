@@ -8,7 +8,7 @@
 
 .thumb .box-container{ 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
 
 .thumb .box-container .box{
@@ -32,8 +32,9 @@
     color: #074D1F;
 }
 
-.thumb .box-container .box i{
-    align-items: center;
+.thumb .box-container i{
+    display: block;
+    margin: 0 35rem;
     color: #ebb42c;
     font-size: 2rem;
     width: 2.5rem;

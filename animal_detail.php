@@ -32,9 +32,10 @@
             $animal = $stmt->fetch(PDO::FETCH_ASSOC);
         ?>
         <section id="detail_page">
+            <h3>Les animaux en détail</h3>
             <div class="box-container">
-                <h5 class="title"><?= htmlspecialchars($animal['animal_name'], ENT_QUOTES); ?></h5>
                 <div class="box">
+                    <h5 class="title"><?= htmlspecialchars($animal['animal_name'], ENT_QUOTES); ?></h5>
                     <div class="image">
                         <img src="<?= htmlspecialchars($animal['animal_image_url'], ENT_QUOTES); ?>" alt="Image de <? htmlspecialchars($animal['animal_name'], ENT_QUOTES); ?>">
                     </div>

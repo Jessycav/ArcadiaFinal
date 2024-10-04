@@ -35,7 +35,7 @@
 
 <header class="header">
     <div class="flex">
-        <a href="dashboard.php" class="logo"><img src="../images/LogoArcadia.jpg" alt="Logo"></a>
+        <a href="../admin/dashboard_admin.php" class="logo"><img src="../images/LogoArcadia.jpg" alt="Logo"></a>
         <nav class="navbar">
             <h2>Espace professionnel</h2>
         </nav>

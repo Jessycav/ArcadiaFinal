@@ -8,6 +8,7 @@
             <h4>Habitats et animaux</h4>
         </div>
         <section id="detail_page">
+            <h3>L'habitat en détail</h3>
             <div class="box-container">
                 <?php
                     // Récupérer l'ID de l'habitat depuis l'URL
@@ -43,15 +44,14 @@
                     $stmt_animals->execute();
                     $animals = $stmt_animals->fetchAll(PDO::FETCH_ASSOC);  
                 ?>
-                <h5 class="title"><?= htmlspecialchars($habitat['habitat_name']); ?></h5>
                 <div class="box">
+                    <h5 class="title"><?= htmlspecialchars($habitat['habitat_name']); ?></h5>
                     <div class="image">
                         <img src="<?= htmlspecialchars($habitat['habitat_image_url'], ENT_QUOTES); ?>" alt="Image de<?= htmlspecialchars($habitat['habitat_name'], ENT_QUOTES); ?>">
                     </div>
                     <br>
                     <div class="description">
                         <p><?= htmlspecialchars($habitat['habitat_description']); ?></p>
-                        <br>
                         <p>Dans cet habitat, vous trouverez :</p>
                         <ul>
                             <?php foreach ($animals as $animal): ?>
