@@ -8,7 +8,7 @@
 
     <div class="main">
         <div class="container">
-            <h3>Bienvenue sur votre espace, <?= htmlspecialchars($_SESSION['user_name']) ?> !</h3>
+            <h3>Bienvenue sur votre espace, <?= htmlspecialchars($_SESSION['user_name']); ?> !</h3>
         </div>
         <section class="dashboard">
             <div class="box-container">

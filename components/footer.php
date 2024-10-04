@@ -14,8 +14,8 @@
             <div class="card">
                 <i class="fa fa-clock-o" style="font-size:32px;color:#ebb42c"></i>
                 <h4>Horaires d'ouverture</h4>
-                <p>09h00</p>
-                
+                   <!-- Horaires ajoutés via JavaScript -->
+                <div id="horairesFooter"></div> 
             </div>
 
             <div class="card">

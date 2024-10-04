@@ -1,7 +1,9 @@
 <?php
     include '../components/connection.php';
-    include '../components/admin_header.php';
 
+    session_start();
+
+    include '../components/admin_header.php';
 ?>
 
     <div class="main">

@@ -1,5 +1,8 @@
 <?php 
     include '../components/connection.php';
+
+    session_start();
+
     include '../components/admin_header.php';
 ?>
 
@@ -30,7 +33,7 @@
             }
         }
 
-        // Gestion de la suppression des services
+        // Gestion de la modification des services
         if (isset($_GET['update_service'])) {
             $service_id = $_GET['service_id'];
             $service_name = $_POST['service_name'];
@@ -52,8 +55,8 @@
         
         <h3>Gestion des services du zoo</h3>
         <!-- Formulaire pour ajouter un service -->
-        <h4>Ajouter un service</h4>
         <div class="form-container">
+            <h4>Ajouter un service</h4>
             <form method="POST">
                 <div class="inputBox">
                     <label for="service_name">Nom du service :</label>
@@ -65,42 +68,48 @@
                 </div>
                 <div class="inputBox">
                     <label for="service_image">Ajouter une image :</label>
-                    <input type="text" id="image" name="image" placeholder="Sélectionner une image" required />
+                    <input type="file" id="service_image" name="image" accept="../images/*" required>
                 </div>
+                <button class="btn" type="submit" name="register">Enregistrer</button>
             </form>
-
-            <hr>
-
-            <!-- Liste des services existants -->
-            <h4>Liste des services</h4>
-            <table>
-                <tr>
-                    <th>Nom</th>
-                    <th>Description </th>
-                    <th>Image</th>
-                    <th>Actions</th>
-                </tr>
-                <?php while ($row = $result->fetch(PDO::FETCH_ASSOC)): ?>
-                <tr>
-                    <td><?php echo $row['service_name']; ?></td>
-                    <td><?php echo $row['service_description']; ?></td>
-                    <td><img src="<?php echo $row['service_image_url']; ?>" alt="<?php echo $row['service_name']; ?>" width="100"></td>
-                    <td>
-                        <!-- Formulaire pour modifier un service -->
-                        <form method="POST">
-                        <input type="hidden" name="service_id" value="<?php echo $row['service_id']; ?>">
-                        <input type="text" name="service_name" value="<?php echo $row['service_name']; ?>" required>
-                        <input type="textarea" name="service_description" value="<?php echo $row['service_description']; ?>" required>
-                        <input type="text" name="service_image" value="<?php echo $row['service_image_url']; ?>" required>
-                        <input type="submit" name="update_service" value="Modifier">
-                        </form>
-                        <!-- Lien pour supprimer un service -->
-                        <a href="?delete=<?php echo $row['service_id']; ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce service?')">Supprimer</a> 
-                    </td>
-                </tr>
-                <?php endwhile; ?>
-            </table>
         </div>
+
+        <hr>
+
+        <!-- Liste des services existants -->
+        <?php
+            $sql = "SELECT * FROM service";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute();
+            $services = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+
+        ?>
+        <h4>Liste des services actuels</h4>
+        <section id="service">
+            <div class="box-container">
+                <?php
+                //vérifier si des animaux ont été trouvés
+                if (!empty($services)) {
+                    // Affichage de chaque animal avec échappement des caractères spéciaux et éviter failles CSS
+                    foreach ($services as $service) {
+                        echo "<div class='box'>";
+                        echo "<img src='" . htmlspecialchars($service['service_image_url'], ENT_QUOTES) . "' alt='" . htmlspecialchars($service['service_name'], ENT_QUOTES) . "'>";
+                        echo "<h4>" . htmlspecialchars($service['service_name'], ENT_QUOTES) . "</h4>";
+                        echo "<p>" . htmlspecialchars($service['service_description'], ENT_QUOTES) . "</p>";
+                        echo "<a href='edit_service.php?id=" . urlencode($service['service_id']) . "'>";
+                        echo "<button>Modifier</button>";
+                        echo "</a>";
+                        echo "<a href='delete.php?id=" . urlencode($service['service_id']) . "'>";
+                        echo "<button>Supprimer</button>";
+                        echo "</a>";
+                        echo "</div>";
+                    }
+                } else {
+                    echo "<p>Aucun service trouvé<p>"; 
+                }
+                ?>
+            </div>
+        </section>
     </div>
         
 </body>
