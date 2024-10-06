@@ -37,7 +37,7 @@
                                 echo "Aucun avis en attente de validation";
                             }
                         } catch (PDOException $e) {
-                            echo "Erreur lors de la récupération des avis : ";
+                            echo "Erreur lors de la récupération des avis: " . $e->getMessage();
                             die ();
                         }
                     }

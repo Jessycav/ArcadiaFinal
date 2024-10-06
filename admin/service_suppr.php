@@ -19,7 +19,7 @@
 
                     echo "Le service a été supprimé";
                 } catch (PDOException $e) {
-                    echo "Erreur lors de la suppression du service";
+                    echo "Erreur lors de la suppression du service: " . $e->getMessage();
                     die ();
                 }
             }

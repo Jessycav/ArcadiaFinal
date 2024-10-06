@@ -47,7 +47,7 @@
 
                     echo "Le service a été modifié.";
                 } catch (PDOException $e) {
-                    echo "Erreur lors la modification des services.";
+                    echo "Erreur lors la modification des services: " . $e->getMessage();
                 }
             } 
         ?>

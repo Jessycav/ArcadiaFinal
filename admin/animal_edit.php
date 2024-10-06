@@ -71,7 +71,7 @@
                 }
                 echo "Les modifications ont été enregistrées.";
             } catch (PDOException $e) {
-                echo "Erreur lors la modification de la fiche.";
+                echo "Erreur lors la modification de la fiche: " . $e->getMessage();
             }
         ?>
 

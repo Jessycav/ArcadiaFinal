@@ -18,7 +18,7 @@
 
                     echo "Avis supprimé";
                 } catch (PDOException $e) {
-                echo "Erreur lors de la suppression de l'avis";
+                echo "Erreur lors de la suppression de l'avis: " . $e->getMessage();
                 die ();
                 }
             }

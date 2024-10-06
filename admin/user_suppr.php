@@ -21,7 +21,7 @@
 
                     echo "Le profil a été supprimé";
                 } catch (PDOException $e) {
-                    echo "Erreur lors de la suppression du profil";
+                    echo "Erreur lors de la suppression du profil: " . $e->getMessage();
                     die ();
                 }
             }

@@ -18,7 +18,7 @@
 
                     echo "Avis approuvé";
                 } catch (PDOException $e) {
-                echo "Erreur lors de l'approbation de l'avis";
+                echo "Erreur lors de l'approbation de l'avis: " . $e->getMessage();
                 die ();
                 }
             }

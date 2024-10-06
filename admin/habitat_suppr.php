@@ -27,7 +27,7 @@
                     echo "La fiche de l'habitat et ses images ont été supprimés";
                 } catch (PDOException $e) {
                     $conn->rollBack();
-                    echo "Erreur lors de la suppression de l'habitat";
+                    echo "Erreur lors de la suppression de l'habitat: " . $e->getMessage();
                     die ();
                 }
             }

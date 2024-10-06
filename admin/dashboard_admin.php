@@ -33,6 +33,9 @@
                 <div class="box">
                     <a href="testimonial_admin.php">Gestion des avis visiteurs</a>
                 </div>
+                <div class="box">
+                    <a href="../stat_view_admin.php">Statistiques de consultation des animaux</a>
+                </div>
             </div>
         </section>
         

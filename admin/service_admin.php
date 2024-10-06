@@ -33,7 +33,7 @@
 
                 echo "Le service a été ajouté";
             } catch (PDOException $e) {
-                echo "Erreur lors l'ajout des services.";
+                echo "Erreur lors l'ajout des services: " . $e->getMessage();
             }
         }
 

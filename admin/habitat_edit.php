@@ -60,7 +60,7 @@
                         echo "Erreur de modification de l'habitat.";
                     }
                 } catch (PDOException $e) {
-                    echo "Erreur lors la modification des habitats.";
+                    echo "Erreur lors la modification des habitats: " . $e->getMessage();
                 }
             } 
         ?>
