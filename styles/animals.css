@@ -1,10 +1,13 @@
-/* Paramètres de la section des animaux */
-.animal .box-container{
+.animal .box-container,
+.user .box-container,
+.report .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
 
-.animal .box-container .box{
+.animal .box-container .box,
+.user .box-container .box,
+.report .box-container .box{
     margin: 1rem;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
     position: relative;
@@ -19,12 +22,15 @@
     border-radius: 5px;
 }
 
-.animal .box-container .box h4{
+.animal .box-container .box h4,
+.user .box-container .box h4,
+.report .box-container .box h4{
     text-transform: uppercase;
     color: #074D1F;
 }
 
-.animal .box-container .box a button{
+.animal .box-container .box a button,
+.user .box-container .box a button{
     font-size: 0.8rem;
     margin: 5px auto;
     padding: 5px;
@@ -33,7 +39,8 @@
     text-align: center;
 }
 
-.animal .box-container .box a button:hover{
+.animal .box-container .box a button:hover,
+.user .box-container .box a button:hover{
     background-color: #d2eddc;
 }
 

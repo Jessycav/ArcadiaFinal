@@ -28,29 +28,30 @@
 
             ?>
             <section class="animal">
-            <div class="box-container">
-                <?php
-                //vérifier si des animaux ont été trouvés
-                if (!empty($animals)) {
-                    // Affichage de chaque animal avec échappement des caractères spéciaux et éviter failles CSS
-                    foreach ($animals as $animal) {
-                        echo "<div class='box'>";
-                        echo "<img src='" . htmlspecialchars($animal['animal_image_url'], ENT_QUOTES) . "' alt='" . htmlspecialchars($animal['animal_name'], ENT_QUOTES) . "'>";
-                        echo "<h4>" . htmlspecialchars($animal['animal_name'], ENT_QUOTES) . "</h4>";
-                        echo "<a href='animal_edit.php?id=" . urlencode($animal['animal_id']) . "'>";
-                        echo "<button>Modifier</button>";
-                        echo "</a>";
-                        echo "<a href='animal_suppr.php?animal_id=" . urlencode($animal['animal_id']) . "'>";
-                        echo "<button>Supprimer</button>";
-                        echo "</a>";
-                        echo "</div>";
+                <div class="box-container">
+                    <?php
+                    //vérifier si des animaux ont été trouvés
+                    if (!empty($animals)) {
+                        // Affichage de chaque animal avec échappement des caractères spéciaux et éviter failles CSS
+                        foreach ($animals as $animal) {
+                            echo "<div class='box'>";
+                            echo "<img src='" . htmlspecialchars($animal['animal_image_url'], ENT_QUOTES) . "' alt='" . htmlspecialchars($animal['animal_name'], ENT_QUOTES) . "'>";
+                            echo "<h4>" . htmlspecialchars($animal['animal_name'], ENT_QUOTES) . "</h4>";
+                            echo "<a href='animal_edit.php?animal_id=" . urlencode($animal['animal_id']) . "'>";
+                            echo "<button>Modifier</button>";
+                            echo "</a>";
+                            echo "<a href='animal_suppr.php?animal_id=" . urlencode($animal['animal_id']) . "'>";
+                            echo "<button>Supprimer</button>";
+                            echo "</a>";
+                            echo "</div>";
+                        }
+                    } else {
+                        echo "<p>Aucun animal trouvé pour cet habitat<p>"; 
                     }
-                } else {
-                    echo "<p>Aucun animal trouvé pour cet habitat<p>"; 
-                }
-                ?>
-            </div>
+                    ?>
+                </div>
             </section> 
+            <a href="dashboard_admin.php"><button class="btn">Retour</button></a>
         </div>
         
 

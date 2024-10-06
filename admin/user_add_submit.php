@@ -27,10 +27,7 @@
                 }
             }
         ?>
-
-        <p><a href="logout.php">Se déconnecter</a></p>
-
-
+        <a href="user_admin.php"><button class="btn">Retour</button></a>
     </div>
 
 </body>

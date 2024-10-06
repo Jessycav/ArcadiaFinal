@@ -23,4 +23,5 @@
                 }
             }
         ?>
+        <a href="testimonial_admin.php"><button class="btn">Retour</button></a>
     </div>
