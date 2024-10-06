@@ -98,7 +98,6 @@
                                 $sql = "SELECT breed_id, breed_name FROM breed";
                                 $stmt = $conn->query($sql);
                                 $breeds = $stmt->fetchAll();
-
                                 foreach ($breeds as $breed) {
                                     echo "<option value='" . $breed['breed_id'] . "'>" . $breed['breed_name'] . "</option>";
                                 }
@@ -115,11 +114,10 @@
                         </div>
                         <button class="btn" type="submit">Enregistrer</button>
                     </form>
-                    
                 </div>
+                <a href="animal_admin.php"><button class="btn">Retour</button></a>
             </div>
         </section>
     </div>
-        
 </body>
 </html>

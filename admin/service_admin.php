@@ -99,6 +99,7 @@
                 ?>
             </div>
         </section>
+        <a href="dashboard_admin.php"><button class="btn">Retour</button></a>
     </div>
         
 </body>

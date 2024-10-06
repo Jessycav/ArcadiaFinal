@@ -32,4 +32,5 @@
                 }
             }
         ?>
+        <a href="habitat_admin.php"><button class="btn">Retour</button></a>
     </div>

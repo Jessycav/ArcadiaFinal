@@ -50,11 +50,10 @@
                     echo "Erreur lors la modification des services.";
                 }
             } 
-   
         ?>
 
         <div class="form-container">
-            <h4></h4>
+            <h4>Modifier ce service</h4>
             <form action="" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="service_id" value="<?php echo htmlspecialchars($service_id); ?>"> 
                 <div class="inputBox">
@@ -77,4 +76,5 @@
                 <button class="btn" type="submit" name="edit">Enregistrer les modifications</button>
             </form>
         </div>
+        <a href="service_admin.php"><button class="btn">Retour</button></a>
     </div>

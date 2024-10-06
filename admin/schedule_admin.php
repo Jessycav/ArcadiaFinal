@@ -60,6 +60,7 @@
             </form>
             <div id="message"></div>
         </div>
+        <a href="dashbord_admin.php"><button class="btn">Retour</button></a>
     </div>
 </body>
 </html>

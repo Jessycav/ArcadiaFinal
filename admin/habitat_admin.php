@@ -55,7 +55,6 @@
                 echo("Erreur lors de l'ajout : " . $e->getMessage());
             }
         }
-
         ?>
         
         <h3>Gestion des habitats du zoo</h3>
@@ -78,9 +77,7 @@
                 <button class="btn" type="submit" name="register">Enregistrer</button>
             </form>
         </div>
-
         <hr>
-
         <!-- Liste des habitats existants -->
         <?php
             $sql = "SELECT habitat.habitat_id, habitat.habitat_name, habitat.habitat_description, habitat_image.habitat_image_url 
@@ -89,8 +86,8 @@
             $stmt = $conn->prepare($sql);
             $stmt->execute();
             $habitats = $stmt->fetchAll(PDO::FETCH_ASSOC); 
-
         ?>
+
         <h4>Liste des habitats actuels</h4>
         <section id="habitat">
             <div class="box-container">
@@ -117,6 +114,8 @@
                 ?>
             </div>
         </section>
+        <br>
+        <a href="dashboard_admin.php"><button class="btn">Retour</button></a>
     </div>
 </body>
 </html>
