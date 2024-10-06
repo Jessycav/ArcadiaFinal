@@ -60,7 +60,7 @@
                         echo "Erreur de modification de l'habitat.";
                     }
                 } catch (PDOException $e) {
-                    echo "Erreur lors la modification des habitats.";
+                    echo "Erreur lors la modification de l'habitat: " . $e->getMessage();
                 }
             } 
         ?>
@@ -75,7 +75,7 @@
                 </div>
                 <div class="inputBox">
                     <label for="habitat_description">Description de l'habitat :</label>
-                    <textarea id="habitat_description" name="habitat_description"><?php echo htmlspecialchars($habitat['habitat_description']); ?></textarea>
+                    <textarea id="habitat_description" name="habitat_description" required maxlength="2000"><?php echo htmlspecialchars($habitat['habitat_description']); ?></textarea>
                 </div>
                 <div class="inputBox">
                     <label for="habitat_image">Ajouter une image :</label>

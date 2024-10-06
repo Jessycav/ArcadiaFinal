@@ -31,9 +31,9 @@
                 $stmt->bindParam(':service_image_url', $image_path);
                 $stmt->execute();
 
-                echo "Le service a été ajouté";
+                echo "Le nouveau service a été ajouté";
             } catch (PDOException $e) {
-                echo "Erreur lors l'ajout des services.";
+                echo "Erreur lors l'ajout du service: " . $e->getMessage();
             }
         }
 

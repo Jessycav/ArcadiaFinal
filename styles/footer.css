@@ -49,8 +49,10 @@ footer .footer-content .inner-footer .card ul{
 }
 
 footer .footer-content .inner-footer .card p{
-    font-size: 16px;  
-    margin-left: 0; 
+    padding: inherit;
+    margin: inherit;
+    font-size: 1rem;  
+    margin-left: 2%; 
 }
 
 footer .footer-content .inner-footer .card h4{

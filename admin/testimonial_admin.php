@@ -37,14 +37,14 @@
                                 echo "Aucun avis en attente de validation";
                             }
                         } catch (PDOException $e) {
-                            echo "Erreur lors de la récupération des avis : ";
+                            echo "Erreur lors de la récupération des avis: " . $e->getMessage();
                             die ();
                         }
                     }
                 ?>
             </div>
         </section>
-        <a href="dashbord_admin.php"><button class="btn">Retour</button></a>
+        <a href="dashboard_admin.php"><button class="btn">Retour</button></a>
     </div>
 
 </body>

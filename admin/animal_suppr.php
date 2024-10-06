@@ -22,13 +22,17 @@
                     $stmt->bindParam(':animal_id', $animal_id, PDO::PARAM_INT);
                     $stmt->execute();
 
+                    $stmt = $conn->prepare("DELETE FROM veterinary_report WHERE animal_id = :animal_id"); 
+                    $stmt->bindParam(':animal_id', $animal_id, PDO::PARAM_INT);
+                    $stmt->execute();
+
                     $conn->commit();
 
-                    echo "La fiche de l'animal et ses images ont été supprimés";
+                    echo "La fiche de l'animal et ses images ont été supprimées";
                 } catch (PDOException $e) {
                     $conn->rollBack();
-                    echo "Erreur lors de la suppression de l'animal";
-                die ();
+                    echo "Erreur lors de la suppression de l'animal: " . $e->getMessage();
+                    die ();
                 }
             }
         ?>

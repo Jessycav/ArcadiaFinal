@@ -16,9 +16,9 @@
                     $stmt = $conn->prepare("DELETE FROM testimonial WHERE testimonial_id = :testimonial_id"); //requête préparée pour éviter les injections SQL
                     $stmt->execute([':testimonial_id' => $testimonial_id]);
 
-                    echo "Avis supprimé";
+                    echo "L'avis a été supprimé";
                 } catch (PDOException $e) {
-                echo "Erreur lors de la suppression de l'avis";
+                echo "Erreur lors de la suppression de l'avis: " . $e->getMessage();
                 die ();
                 }
             }

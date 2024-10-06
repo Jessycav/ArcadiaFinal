@@ -51,7 +51,7 @@
                         if ($stmt_image->execute()) {
                             // Valider la transaction
                             $conn->commit();
-                            echo "Nouvel animal ajouté avec succès.";
+                            echo "Le nouvel animal a été ajouté avec succès.";
                         } else {
                             throw new Exception("Erreur lors de l'ajout de l'image.");
                         }
@@ -59,7 +59,7 @@
                         throw new Exception("Erreur lors de l'ajout de l'animal.");
                     }
                 } catch (PDOException $e) {
-                    echo("Erreur lors de l'ajout : " . $e->getMessage());
+                    echo("Erreur lors de l'ajout de l'animal: " . $e->getMessage());
                 }
             }
         ?>
@@ -109,7 +109,7 @@
                             <input type="text" id="health" name="health" placeholder="Saisir l'état de santé">
                         </div>
                         <div class="inputBox">
-                            <label for="animal_image">Image :</label>
+                            <label for="animal_image">Image de l'animal :</label>
                             <input type="file" id="animal_image" name="image" accept="../images/animaux/*" required>
                         </div>
                         <button class="btn" type="submit">Enregistrer</button>

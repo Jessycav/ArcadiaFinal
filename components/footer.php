@@ -14,8 +14,8 @@
             <div class="card">
                 <i class="fa fa-clock-o" style="font-size:32px;color:#ebb42c"></i>
                 <h4>Horaires d'ouverture</h4>
-                   <!-- Horaires ajoutés via JavaScript -->
                 <div id="horairesFooter"></div> 
+                <!-- Horaires ajoutés via JavaScript -->
             </div>
 
             <div class="card">
@@ -38,6 +38,7 @@
                 </div>
             </div>
         </div>
+        <br>
         <div class="bottom-footer">
             <div class="img-box">
                 <img src="../images/LogoArcadia.jpg" alt="Logo">

@@ -41,7 +41,7 @@
 
                     echo "Le profil utilisateur a été modifié.";
                 } catch (PDOException $e) {
-                    echo "Erreur lors la modification du profil.";
+                    echo "Erreur lors la modification du profil: " . $e->getMessage();
                 }
             } 
         ?>

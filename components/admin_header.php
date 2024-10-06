@@ -29,8 +29,10 @@
     <script src="../script/navbar_script.js" defer></script>
     <script src="../script/horaires_script.js" defer></script>
     <script src="../script/testimonial_script.js" defer></script>
-    <script src="../script/carousel_script.js" defer></script>
-    
+    <script src="../script/carousel_script.js" defer></script>  
+    <script src="../script/stats.js" defer></script>
+    <script src="../script/getStats.js" defer></script>
+    <script src="../script/server.js" defer></script>
 </head>
 
 <header class="header">
@@ -41,7 +43,7 @@
         </nav>
         <div class="icons">
             <i class="fa fa-bars" id="menu-bars"></i>
-            <a href="../login.php" class="nav-link"><i class="fa fa-user" id="user-btn" style="font-size:24px"></i></a>
+            <a href="logout.php" class="nav-link"><i class="fa fa-user" id="user-btn" style="font-size:24px"></i></a>
         </div>
     </div>
 </header>
