@@ -44,7 +44,7 @@
                     if ($stmt_image->execute()) {
                         // Valider la transaction
                         $conn->commit();
-                        echo "Nouvel habitat ajouté avec succès.";
+                        echo "Le nouvel habitat a été ajouté avec succès.";
                     } else {
                         throw new Exception("Erreur lors de l'ajout de l'image.");
                     }

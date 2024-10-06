@@ -16,7 +16,7 @@
                     $stmt = $conn->prepare("UPDATE testimonial SET approuve_message = 1 WHERE testimonial_id = :testimonial_id");
                     $stmt->execute([':testimonial_id' => $testimonial_id]);
 
-                    echo "Avis approuvé";
+                    echo "L'avis a été approuvé";
                 } catch (PDOException $e) {
                 echo "Erreur lors de l'approbation de l'avis: " . $e->getMessage();
                 die ();

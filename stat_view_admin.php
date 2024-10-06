@@ -10,7 +10,7 @@
         <h3>Statistiques de consultation des animaux</h3>
         <?php
             // Appel à l'API pour récupérer les statistiques
-            $api_url = 'http://localhost:3000/animals/stats';
+            $api_url = 'http://localhost:2000/animals/stats';
             $response = file_get_contents($api_url); //Récupérer le réponse JSON
 
             if ($response !== false) {

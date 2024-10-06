@@ -24,7 +24,7 @@
 
                     $conn->commit();
 
-                    echo "La fiche de l'habitat et ses images ont été supprimés";
+                    echo "La fiche de l'habitat et ses images ont été supprimées";
                 } catch (PDOException $e) {
                     $conn->rollBack();
                     echo "Erreur lors de la suppression de l'habitat: " . $e->getMessage();

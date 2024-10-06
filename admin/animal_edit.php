@@ -28,10 +28,10 @@
                 //Récupérer les données depuis le formulaire
                 $animal_id = isset($animal['animal_id']) ? $animal['animal_id'] : '';
                 $health = isset($animal['health']) ? $animal['health'] : '';
-                $food = isset($animal['food']) ? $animal['food'] : '';
-                $food_weight = isset($animal['food_weight']) ? $animal['food_weight'] : '';
-
-                $sql_health = "UPDATE animal SET health = :health WHERE animal_id = :animal_id";
+               
+                $sql_health = "UPDATE animal 
+                SET health = :health 
+                WHERE animal_id = :animal_id";
             
                 $stmt = $conn->prepare($sql_health);
                 $stmt->bindParam(':health', $health, PDO::PARAM_STR);
@@ -43,11 +43,14 @@
                 $query->bindParam(':animal_id', $animal_id, PDO::PARAM_INT);
                 $query->execute();
                 $veterinary_report = $query->fetch(PDO::FETCH_ASSOC);
-                if ($veterinary_report) {
-                    $sql_report = "UPDATE veterinary_report SET food = :food, food_weight = :food_weight WHERE animal_id = animal_id";
-                } else {
-                    $sql_report = "INSERT INTO veterinary_report (animal_id, food, food_weight) VALUES (:animal_id, :food, :food_weight)";
-                }
+
+                $food = isset($animal['food']) ? $animal['food'] : '';
+                $food_weight = isset($animal['food_weight']) ? $animal['food_weight'] : '';
+
+                $sql_report = "UPDATE veterinary_report 
+                SET food = :food, food_weight = :food_weight 
+                WHERE animal_id = :animal_id";
+               
                 $stmt = $conn->prepare($sql_report);
                 $stmt->bindParam(':food', $food, PDO::PARAM_STR);
                 $stmt->bindParam(':food_weight', $food_weight, PDO::PARAM_STR);
@@ -61,7 +64,10 @@
                     $image_path = '../images/animaux/' . $image_name;
                     move_uploaded_file($image_tmp, $image_path);
 
-                    $sql_image = "UPDATE animal_image SET animal_image_url = :animal_image_url WHERE animal_id = :animal_id";            
+                    $sql_image = "UPDATE animal_image 
+                    SET animal_image_url = :animal_image_url 
+                    WHERE animal_id = :animal_id";            
+
                     $stmt = $conn->prepare($sql_image);
                     $stmt->bindParam(':animal_image_url', $image_path, PDO::PARAM_STR);
                     $stmt->bindParam(':animal_id', $animal_id, PDO::PARAM_INT);
@@ -84,11 +90,11 @@
                     <input type="text" id="animal_name" value="<?php echo htmlspecialchars($animal['animal_name']); ?>" disabled/>
                 </div>
                 <div class="inputBox">
-                    <label for="habitat_name">Nom de l'animal :</label>
+                    <label for="habitat_name">Habitat de l'animal :</label>
                     <input type="text" id="habitat_name" value="<?php echo htmlspecialchars($animal['habitat_name']); ?>" disabled/>
                 </div>
                 <div class="inputBox">
-                    <label for="breed_name">Nom de l'animal :</label>
+                    <label for="breed_name">Race de l'animal :</label>
                     <input type="text" id="breed_name" value="<?php echo htmlspecialchars($animal['breed_name']); ?>" disabled/>
                 </div>
                 <h5>État de l'animal</h5>

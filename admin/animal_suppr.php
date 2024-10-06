@@ -28,7 +28,7 @@
 
                     $conn->commit();
 
-                    echo "La fiche de l'animal et ses images ont été supprimés";
+                    echo "La fiche de l'animal et ses images ont été supprimées";
                 } catch (PDOException $e) {
                     $conn->rollBack();
                     echo "Erreur lors de la suppression de l'animal: " . $e->getMessage();

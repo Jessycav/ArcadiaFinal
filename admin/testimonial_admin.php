@@ -44,7 +44,7 @@
                 ?>
             </div>
         </section>
-        <a href="dashbord_admin.php"><button class="btn">Retour</button></a>
+        <a href="dashboard_admin.php"><button class="btn">Retour</button></a>
     </div>
 
 </body>

@@ -38,10 +38,10 @@
                         // Affichage conditionnel
                         if($animal_name && $food && $food_weight && $report_date) {
                             echo "<div class='box'>";
-                            echo "<h4>" . $animal_name . "</h4>";
-                            echo "<p>" . $food . "</p>";
-                            echo "<p>" . $food_weight . "</p>";
-                            echo "<p>" . $report_date . "</p>";
+                            echo "<h4>Prénom :" . $animal_name . "</h4>";
+                            echo "<p>Nourriture :" . $food . "</p>";
+                            echo "<p>Grammage :" . $food_weight . "</p>";
+                            echo "<p>Date de passage : " . $report_date . "</p>";
                             echo "</div>";
                         }
                     }
