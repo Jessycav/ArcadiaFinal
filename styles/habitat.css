@@ -1,6 +1,5 @@
 /* Paramètres de la section habitats*/
 .thumb{
-    max-width: 1200px;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
     margin: 2rem auto;
     padding: 2%;
@@ -8,15 +7,17 @@
 
 .thumb .box-container{ 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 }
 
 .thumb .box-container .box{
+    position: relative;
     text-align: center;
     margin: 1rem;
     line-height: 1.5;
     padding-bottom: 1rem;
     color: #074D1F;
+    
 }
 
 .thumb .box-container .box img{
@@ -32,9 +33,9 @@
     color: #074D1F;
 }
 
-.thumb .box-container i{
+.thumb i{
     display: block;
-    margin: 0 35rem;
+    margin: 0 auto;
     color: #ebb42c;
     font-size: 2rem;
     width: 2.5rem;
@@ -42,44 +43,42 @@
     cursor: pointer;
 }
 
-#habitat .box-container{
+#habitat {
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
     margin-top: 1rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
 
-#habitat .box-container .box{
+#habitat .box{
     margin: 1rem;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+    background-color: #f3f1ed;
     position: relative;
-    background-color: #fff; 
     text-align: center;
 }
 
-#habitat .box-container .box img{
-    width: 10rem;
-    height: 10rem;
+#habitat .box img{
+    width: 60%;
+    height: 60%;
     padding: 0.5rem;
     object-fit: cover;
     border-radius: 5px;
 }
 
-#habitat .box-container .box h4{
+#habitat .box h4{
     text-align: center;
     max-width: 400px;
     color: #074D1F;
 }
 
-#habitat .box-container .box a button{
-    font-size: 0.8rem;
-    margin: 1rem;
-    padding: 5px;
-    border: 1px solid #074d1f;
-    border-radius: 5px;
+#habitat .box a button{
+    font-size: 1rem;
+    margin: 0.5rem auto;
+    padding: 0.5rem 1rem;
     text-align: center;
 }
 
-#habitat .box-container .box a button:hover{
+#habitat.box a button:hover{
     background-color: #d2eddc;
 }
