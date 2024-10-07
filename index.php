@@ -53,9 +53,9 @@
                     <img src="images/photo_habitat/marais.jpg" alt="Marais">
                     <h4>Le marais</h4>   
                 </div>
-                <div>
-                    <a href="../habitat.php"><i class="fa fa-caret-square-o-right"></i></a>
-                </div>
+            </div>
+            <div>
+                <a href="../habitat.php"><i class="fa fa-caret-square-o-right"></i></a>
             </div>
         </section>
         <br>

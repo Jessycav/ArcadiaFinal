@@ -1,7 +1,7 @@
 .services .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    background-color: #e8dec5;
+    background-color: #f3f1ed;
 }
 
 .services .box-container .box{

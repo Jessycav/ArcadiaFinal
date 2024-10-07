@@ -38,9 +38,9 @@
         <div class="banner">
             <h4>Se connecter</h4>
         </div>
+        <h3>Connexion à l'espace professionnel</h3>
         <!-- Espace de contact -->
         <div class="form-container">
-            <h3>Connexion à l'espace professionnel</h3>
             <?php if ($error): ?>
                 <p style="color: red;"><?= htmlspecialchars($error) ?></p>
             <?php endif;?>
