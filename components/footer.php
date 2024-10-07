@@ -14,6 +14,13 @@
             <div class="card">
                 <i class="fa fa-clock-o" style="font-size:32px;color:#ebb42c"></i>
                 <h4>Horaires d'ouverture</h4>
+                <p>Lundi : 09h00 - 18h00</p>
+                <p>Mardi : 09h00 - 18h00</p>
+                <p>Mercredi : 09h00 - 18h00</p>
+                <p>Jeudi : 09h00 - 18h00</p>
+                <p>Vendredi: 09h00 - 18h00</p>
+                <p>Samedi: 09h00 - 19h00</p>
+                <p>Dimanche: 10h00 - 18h00</p>
                 <div id="horairesFooter"></div> 
                 <!-- Horaires ajoutés via JavaScript -->
             </div>

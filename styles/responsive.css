@@ -50,7 +50,7 @@
     
     footer{
         width: 100%;
-        min-height: 105vh !important;
+        min-height: 115vh !important;
         margin-top: 1rem;
     }
     
@@ -88,7 +88,7 @@
 
     footer{
         width: 100%;
-        min-height: 100vh !important;
+        min-height: 105vh !important;
         margin-top: 1rem;
     }
     
@@ -120,7 +120,7 @@
 
     footer{
         width: 100%;
-        min-height: 130vh !important;
+        min-height: 155vh !important;
         margin-top: 1rem;
     }
 }
@@ -173,6 +173,29 @@
     #service .box-container .box img{
         width: 100% !important;
         height: auto;
+    }
+    footer .footer-content .inner-footer .card h4{
+        text-align: center;
+    }
+
+    footer .footer-content .inner-footer .card .follow{
+        text-align: center;
+        margin-left: 1rem;
+    }
+
+    footer .footer-content .bottom-footer .img-box img{
+        width: 30% !important;
+        height: auto;
+    }
+
+    footer .footer-content .inner-footer .card i{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer .footer-content .inner-footer .card .link{
+        align-items: center;
     }
 }
 
