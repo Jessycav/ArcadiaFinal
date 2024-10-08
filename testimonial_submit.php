@@ -1,6 +1,6 @@
 <?php 
-    include 'components/connection.php';
-    include 'components/header.php';
+    require_once 'components/connection.php';
+    require_once 'components/header.php';
 ?>
 
     <div class="main">

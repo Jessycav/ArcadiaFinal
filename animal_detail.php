@@ -1,7 +1,7 @@
 <?php 
-    include 'components/connection.php';
+    require_once 'components/connection.php';
 
-    include 'components/header.php';
+    require_once 'components/header.php';
 ?>
     <div class="main">
         <div class="banner">
@@ -60,7 +60,7 @@
             <a href='habitat_detail.php?id=<?= htmlspecialchars($animal['habitat_id']); ?>'><button class='btn'>Retour à l'habitat</button></a>
         </section>
         <!-- Footer -->
-        <?php include 'components/footer.php';?>
+        <?php require_once 'components/footer.php';?>
     </div>
 </body>
 </html>

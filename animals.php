@@ -1,7 +1,7 @@
 <?php 
-    include 'components/connection.php';
+    require_once 'components/connection.php';
 
-    include 'components/header.php';
+    require_once 'components/header.php';
 ?>
     <div class="main">
         <div class="banner">
@@ -15,7 +15,9 @@
             $habitat_filter = isset($_GET['habitat_id']) ? $_GET['habitat_id'] : '';
 
             // Recupérer les données animaux avec jointure
-            $sql = "SELECT animal.animal_id, animal.animal_name, animal_image.animal_image_url FROM animal JOIN animal_image ON animal.animal_id = animal_image.animal_id";
+            $sql = "SELECT animal.animal_id, animal.animal_name, animal_image.animal_image_url 
+            FROM animal 
+            JOIN animal_image ON animal.animal_id = animal_image.animal_id";
 
             if ($habitat_filter) {
                 $sql .= " WHERE animal.habitat_id = :habitat_id";
@@ -33,8 +35,8 @@
 
             //Récupération des résultats
             $animals = $stmt->fetchAll(PDO::FETCH_ASSOC); //tableau associatif de résultats
-
         ?>
+        
         <!-- Filtrer les animaux par habitats -->
         <div class="filter">
             <form action="" method="GET"> 
@@ -72,7 +74,7 @@
         </section>       
         
         <!-- Footer -->
-        <?php include 'components/footer.php';?>
+        <?php require_once 'components/footer.php';?>
     </div>
     
 </body>

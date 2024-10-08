@@ -1,5 +1,5 @@
 <?php 
-    include 'components/connection.php';
+    require_once 'components/connection.php';
 
     header('Content-Type: application/json');
 

@@ -1,9 +1,9 @@
 <?php 
-    include '../components/connection.php';
+    require_once '../components/connection.php';
 
     session_start();
 
-    include '../components/admin_header.php';;
+    require_once '../components/admin_header.php';;
 ?>
     <div class="main">
         <?php

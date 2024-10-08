@@ -1,7 +1,9 @@
 <?php 
-    include 'components/connection.php';
+    require_once 'components/connection.php';
 
     session_start();
+
+    require_once 'components/header.php';
 
     //Vérifier si l'utilisateur est déjà connecté
     if (isset($_SESSION['user_name'])) {
@@ -31,15 +33,12 @@
             $error = 'Nom d\'utilisateur ou mot de passe incorrect';
         }
     }
-
-    include 'components/header.php';
 ?>
     <div class="main">
         <div class="banner">
             <h4>Se connecter</h4>
         </div>
         <h3>Connexion à l'espace professionnel</h3>
-        <!-- Espace de contact -->
         <div class="form-container">
             <?php if ($error): ?>
                 <p style="color: red;"><?= htmlspecialchars($error) ?></p>
@@ -59,7 +58,7 @@
         </div> 
    
         <!-- Footer -->
-        <?php include 'components/footer.php';?>
+        <?php require_once 'components/footer.php';?>
     </div>
     
 </body>

@@ -1,7 +1,7 @@
 <?php 
-    include 'components/connection.php';
+    require_once 'components/connection.php';
 
-    include 'components/header.php';
+    require_once 'components/header.php';
 ?>
     <div class="main">
         <div class="banner">
@@ -65,7 +65,7 @@
             <a href="habitat.php"><button class="btn">Retour à la liste des habitats</button></a>
         </section>
         <!-- Footer -->
-        <?php include 'components/footer.php';?>    
+        <?php require_once 'components/footer.php';?>    
     </div>
 
 </body>

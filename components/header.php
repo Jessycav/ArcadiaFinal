@@ -30,9 +30,6 @@
     <script src="../script/schedule_script.js" defer></script>
     <script src="../script/testimonial_script.js" defer></script>
     <script src="../script/carousel_script.js" defer></script>
-    <script src="../script/stats.js" defer></script>
-    <script src="../script/getStats.js" defer></script>
-    <script src="../script/server.js" defer></script>
 </head>
 
 <header class="header">

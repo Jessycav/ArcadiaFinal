@@ -130,9 +130,8 @@
         position: fixed;
         top: 0;
         width: 85vw;
-        left: 3%;
+        left: 7%;
         max-height: 100px;
-        margin: 1rem;
         z-index: 101;
         line-height: 1.2;
     }
@@ -204,9 +203,8 @@
         position: fixed;
         top: 0;
         width: 85vw;
-        left: 2%;
+        left: 7%;
         max-height: 100px;
-        margin: 1rem;
         z-index: 101;
         line-height: 1.2;
     }
@@ -248,7 +246,7 @@
         padding: inherit;
         margin: inherit;
         font-size: 0.8rem;  
-        text-align: center;
+        text-align: center !important;
     }
     
     footer .footer-content .inner-footer .card h4{
